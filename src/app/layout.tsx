@@ -19,8 +19,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "CPACC Practice Questions",
   description: "Test your knowledge of accessibility concepts for CPACC certification",
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#4F46E5", // Indigo color matching your UI theme
   openGraph: {
     title: "CPACC Practice Questions",
     description: "Test your knowledge of accessibility concepts for CPACC certification",
@@ -40,7 +38,7 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>
-          <footer className="text-center p-4 text-sm text-gray-500">
+          <footer className="text-center p-4 text-sm text-gray-300">
             CPACC Practice Questions © {new Date().getFullYear()} | Created by students for educational purposes | 
             Not affiliated with IAAP or any certification body
           </footer>

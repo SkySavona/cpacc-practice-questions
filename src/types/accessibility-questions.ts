@@ -1333,5 +1333,268 @@ export const accessibilityQuestions: Question[] = [
     answer: "b",
     category: "Universal Design",
     explanation: "The text states: 'Though these seven principles were intended to be applied to architectural and industrial design, these principles have been a point of reference to applying universal design to other areas such as education and web design.'"
+  },
+  // New questions to add after question 100
+
+  // Accessibility as the Minimum Goal
+  {
+    id: 101,
+    text: "You can create a website that complies fully with the WCAG accessibility guidelines, but which is not fully accessible. Is this statement true or false?",
+    options: [
+      { id: "a", text: "True" },
+      { id: "b", text: "False" }
+    ],
+    answer: "a",
+    category: "Accessibility Principles",
+    explanation: "While guidelines provide a strong foundation, merely following technical requirements doesn't guarantee a fully accessible experience. Some accessibility issues are subjective or context-dependent and may not be covered by the guidelines."
+  },
+  {
+    id: 102,
+    text: "Which of the following is an example of a subjective accessibility guideline that is not easily testable?",
+    options: [
+      { id: "a", text: "All images have an alt attribute" },
+      { id: "b", text: "The cognitive skills required to use a web page are minimized" },
+      { id: "c", text: "All form input elements have a label" },
+      { id: "d", text: "The web page has a title" }
+    ],
+    answer: "b",
+    category: "Accessibility Principles",
+    explanation: "While technical requirements like alt attributes, form labels, and page titles are objectively testable, minimizing cognitive skills is subjective and can't be easily measured, making it difficult to include in formal guidelines."
+  },
+  {
+    id: 103,
+    text: "Which of the following is NOT one of the 7 Principles of Universal Design?",
+    options: [
+      { id: "a", text: "Equitable Use" },
+      { id: "b", text: "Simple and Intuitive Use" },
+      { id: "c", text: "Tolerance for Error" },
+      { id: "d", text: "High Physical Effort" }
+    ],
+    answer: "d",
+    category: "Universal Design",
+    explanation: "The correct principle is 'Low Physical Effort,' not 'High Physical Effort.' The 7 Principles are: Equitable Use, Flexibility in Use, Simple and Intuitive Use, Perceptible Information, Tolerance for Error, Low Physical Effort, and Size and Space for Approach and Use."
+  },
+  {
+    id: 104,
+    text: "Which of the following statements is true?",
+    options: [
+      { id: "a", text: "Web accessibility happens readily without planning" },
+      { id: "b", text: "As long as all website components are accessible individually, the entire user experience will always be accessible" },
+      { id: "c", text: "Retrofitting an accessibility solution can solve most accessibility problems, without having to start the design from scratch" },
+      { id: "d", text: "Accessibility rot in websites can occur when designers see accessibility as a one-time project, rather than an ongoing process" }
+    ],
+    answer: "d",
+    category: "Myths and Facts",
+    explanation: "Accessibility requires ongoing maintenance and consideration with each new feature or update. Viewing it as a one-time fix leads to 'accessibility rot' where an initially accessible site becomes less accessible over time as new content and features are added without maintaining accessibility standards."
+  },
+
+  // Avoid Exclusive Design Patterns
+  {
+    id: 105,
+    text: "Which of the following is identified as the most common accessibility design failure?",
+    options: [
+      { id: "a", text: "Overreliance on advanced technologies" },
+      { id: "b", text: "Inconsistent color choices across the site" },
+      { id: "c", text: "Not designing for accessibility at all from the start" },
+      { id: "d", text: "Using excessive animations and media elements" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "Many designers do not know they need to plan for accessibility in the first place, so they never integrate accessibility requirements into their design process."
+  },
+  {
+    id: 106,
+    text: "In the \"closet organizer\" analogy, what principle does a well-organized closet illustrate regarding web design?",
+    options: [
+      { id: "a", text: "The need to remove all design elements to reduce complexity" },
+      { id: "b", text: "The importance of having content hidden until needed" },
+      { id: "c", text: "The importance of thoughtful organization and planning for usability" },
+      { id: "d", text: "The requirement that each page has a single heading for simplicity" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "A well-organized closet (like a well-structured site) makes it easier for everyone to find what they need. This analogy shows that planning and organization are critical for accessible, user-friendly designs."
+  },
+  {
+    id: 107,
+    text: "What is the key reason that \"designing for accessibility\" usually requires an expert on the team?",
+    options: [
+      { id: "a", text: "To create custom color palettes" },
+      { id: "b", text: "To ensure the website is responsive on all devices" },
+      { id: "c", text: "To apply specialized knowledge and best practices from the start" },
+      { id: "d", text: "To reduce the number of site visitors without disabilities" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "Accessibility expertise is vital from the beginning. An accessibility specialist understands the technical and user-focused needs required to make a site truly accessible."
+  },
+  {
+    id: 108,
+    text: "Why are \"steep wheelchair ramps\" cited as an example of an ineffective accessibility design in the physical world?",
+    options: [
+      { id: "a", text: "Because they are required by law but rarely used" },
+      { id: "b", text: "Because they only work in specific weather conditions" },
+      { id: "c", text: "Because a ramp that is too steep is still inaccessible and potentially dangerous" },
+      { id: "d", text: "Because they are too expensive to build" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "A ramp that is too steep fails its core purpose. In the same way, \"partial\" or \"misapplied\" accessibility features on the web can fail to accommodate users and sometimes create additional barriers."
+  },
+  {
+    id: 109,
+    text: "Which of the following is a frequent web design failure related to semantic markup?",
+    options: [
+      { id: "a", text: "Using <h1> through <h6> correctly for all headings" },
+      { id: "b", text: "Ensuring all visual elements have high color contrast" },
+      { id: "c", text: "Only using <div> and <span> tags instead of semantic elements" },
+      { id: "d", text: "Building a site exclusively with server-side rendering" }
+    ],
+    answer: "c",
+    category: "WCAG Guidelines",
+    explanation: "Overusing generic <div>/<span> tags (and styling them to look like headings or buttons) prevents screen readers from recognizing proper structure or roles."
+  },
+  {
+    id: 110,
+    text: "Why is partially implementing ARIA (Accessible Rich Internet Applications) techniques often considered an \"incomplete design\" failure?",
+    options: [
+      { id: "a", text: "It slows down the website for all users" },
+      { id: "b", text: "It creates more visually appealing widgets" },
+      { id: "c", text: "It may confuse assistive technology if roles, states, and properties are not fully defined" },
+      { id: "d", text: "It increases site security risks" }
+    ],
+    answer: "c",
+    category: "WCAG Guidelines",
+    explanation: "ARIA must be consistently and correctly applied. Using it incorrectly or partially can make a site more confusing for screen reader users than if no ARIA were used at all."
+  },
+  {
+    id: 111,
+    text: "Which best illustrates \"incomplete design\" in a physical-world accessibility context?",
+    options: [
+      { id: "a", text: "Extra street lighting on sidewalks" },
+      { id: "b", text: "Clear signage at building entrances" },
+      { id: "c", text: "A curb cut on one side of the street but a high curb on the median" },
+      { id: "d", text: "A wheelchair ramp that is built at a 1:12 slope" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "If the curb cut is only on the sidewalk but not on the median, the wheelchair user gets stuck. Incomplete design fails when the entire user journey isn't considered."
+  },
+  {
+    id: 112,
+    text: "How might \"bad retrofitting\" appear on a website that was not initially designed for accessibility?",
+    options: [
+      { id: "a", text: "Replacing every image with text descriptions only" },
+      { id: "b", text: "Adding a large block of ARIA attributes that have no clear purpose" },
+      { id: "c", text: "Switching to an entirely new front-end framework" },
+      { id: "d", text: "Aligning the design with WCAG guidelines before launch" }
+    ],
+    answer: "b",
+    category: "Accessibility Principles",
+    explanation: "In a hasty retrofit, developers sometimes add random ARIA attributes or code \"patches,\" hoping to fix accessibility. Improper use of ARIA can make the site more confusing."
+  },
+  {
+    id: 113,
+    text: "Which scenario demonstrates an \"inconvenient or stigmatizing\" design for users with disabilities on the web?",
+    options: [
+      { id: "a", text: "A site that allows both mouse and keyboard navigation" },
+      { id: "b", text: "A text-only version hidden behind a request form for users with disabilities" },
+      { id: "c", text: "A color palette that meets WCAG contrast requirements" },
+      { id: "d", text: "A fully responsive mobile layout" }
+    ],
+    answer: "b",
+    category: "Accessibility Principles",
+    explanation: "Making users request a separate, often inferior \"accessible\" version stigmatizes them by singling them out and offering subpar functionality."
+  },
+  {
+    id: 114,
+    text: "What is an example of \"accessibility rot\" on the web?",
+    options: [
+      { id: "a", text: "Continually adding new features but testing them for accessibility" },
+      { id: "b", text: "Keeping the same codebase and never adding content" },
+      { id: "c", text: "Fixing accessibility bugs immediately as they arise" },
+      { id: "d", text: "Adding new content and features without maintaining accessibility practices, leading to broken accessibility over time" }
+    ],
+    answer: "d",
+    category: "Myths and Facts",
+    explanation: "\"Accessibility rot\" occurs when an originally accessible site degrades because new updates fail to follow accessibility guidelines."
+  },
+  {
+    id: 115,
+    text: "Which of these best describes why a website without planned keyboard interaction is inaccessible?",
+    options: [
+      { id: "a", text: "All modern browsers already handle keyboard navigation automatically" },
+      { id: "b", text: "Most users prefer to click instead of tab" },
+      { id: "c", text: "Users with mobility impairments or those who are blind often rely on keyboard or assistive tech to navigate" },
+      { id: "d", text: "Keyboard navigation only applies to mobile devices" }
+    ],
+    answer: "c",
+    category: "Disability Categories",
+    explanation: "Proper keyboard interaction is crucial for those who cannot use a mouse, including screen reader users and people with mobility impairments."
+  },
+  {
+    id: 116,
+    text: "Which of the following examples shows how \"partial solutions\" can fail people with disabilities?",
+    options: [
+      { id: "a", text: "Providing alt text for all images" },
+      { id: "b", text: "Using headings to structure content" },
+      { id: "c", text: "Adding ARIA labels but leaving focus traps in place" },
+      { id: "d", text: "Making a search box easily reachable via keyboard" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "If you fix one accessibility issue (e.g., labeling) but ignore others (e.g., keyboard traps), the overall user experience can still be broken."
+  },
+  {
+    id: 117,
+    text: "What is the main risk of relying solely on \"visible best practices\" without focusing on underlying code semantics?",
+    options: [
+      { id: "a", text: "The site will load too quickly for some screen readers" },
+      { id: "b", text: "The site might fail to be mobile responsive" },
+      { id: "c", text: "Screen reader users may be unable to navigate despite a visually acceptable design" },
+      { id: "d", text: "The site might be penalized by search engines" }
+    ],
+    answer: "c",
+    category: "WCAG Guidelines",
+    explanation: "Accessibility isn't just about how things look; it's also about the underlying structure that screen readers and other assistive tools rely on."
+  },
+  {
+    id: 118,
+    text: "Why can \"a little knowledge\" be especially dangerous in web accessibility?",
+    options: [
+      { id: "a", text: "It increases the cost of development" },
+      { id: "b", text: "It reduces the site's overall performance" },
+      { id: "c", text: "Developers might apply partial fixes incorrectly, creating new issues" },
+      { id: "d", text: "It causes confusion about branding guidelines" }
+    ],
+    answer: "c",
+    category: "Accessibility Principles",
+    explanation: "Incomplete or incorrect use of accessibility techniques (e.g., random ARIA attributes) can break existing functionality and lead to a worse user experience."
+  },
+  {
+    id: 119,
+    text: "Which scenario best illustrates an \"inconvenient or stigmatizing\" approach in a physical environment, paralleling web accessibility issues?",
+    options: [
+      { id: "a", text: "Providing entrance ramps at both the main and side entrances" },
+      { id: "b", text: "Asking wheelchair users to enter the building through a back alley" },
+      { id: "c", text: "Creating wide hallways that accommodate wheelchairs" },
+      { id: "d", text: "Building entrances without steps" }
+    ],
+    answer: "b",
+    category: "Accessibility Principles",
+    explanation: "Forcing wheelchair users to use a separate, less convenient entrance mirrors the web scenario of offering a subpar \"accessible version\" or requiring special requests."
+  },
+  {
+    id: 120,
+    text: "Why is it inadequate for a website to rely solely on \"visual cues\" (like red borders) for form errors?",
+    options: [
+      { id: "a", text: "Users appreciate more color variety on the site" },
+      { id: "b", text: "Too many colors can confuse users with ADHD" },
+      { id: "c", text: "Users who are blind or color-blind won't notice strictly visual changes" },
+      { id: "d", text: "It violates standard design principles set by color guidelines" }
+    ],
+    answer: "c",
+    category: "Disability Categories",
+    explanation: "People using screen readers or those with color-blindness won't detect purely visual cues. An accessible form needs text-based or programmatic indicators too."
   }
 ];

@@ -177,14 +177,15 @@ const AccessibilityQuiz: React.FC = () => {
           className="relative bg-gray-900 p-6 rounded-lg shadow-lg z-10 max-w-sm mx-auto text-white"
         >
           {/* Close button (×) positioned at the top right */}
-          <button 
-            ref={closeButtonRef}
-            onClick={onClose}
-            className="absolute top-2 right-2 text-2xl font-bold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 p-2 rounded-full"
-            aria-label="Close modal"
-          >
-            ×
-          </button>
+       <button 
+  ref={closeButtonRef}
+  onClick={onClose}
+  className="absolute top-2 right-2 text-2xl font-bold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-gray-900 rounded-full w-10 h-10 flex items-center justify-center"
+  aria-label="Close modal"
+>
+  ×
+</button>
+
           <h2 id="exit-modal-title" className="text-xl font-bold mb-4 text-center">
             Exit Quiz?
           </h2>
@@ -294,11 +295,21 @@ const AccessibilityQuiz: React.FC = () => {
 
   return (
     <>
-      <main className="flex flex-col max-w-4xl mx-auto p-4 sm:p-6 bg-gray-900 rounded-lg shadow-lg text-white">
-        <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">Accessibility Knowledge Quiz</h1>
+      <main className="relative flex flex-col max-w-4xl mx-auto p-4 sm:p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+        {/* Exit Quiz button positioned at the top right */}
+        <button
+          onClick={openExitModal}
+          className="absolute top-4 right-4 px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+        >
+          Exit Quiz
+        </button>
+
+        <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">
+          Accessibility Knowledge Quiz
+        </h1>
         
         {/* Quiz progress and score */}
-        <div className="mb-2 text-sm text-gray-400">
+        <div className="mb-2 text-md text-gray-100">
           Question {currentQuestion + 1} of {shuffledQuestions.length}
         </div>
 
@@ -306,7 +317,7 @@ const AccessibilityQuiz: React.FC = () => {
           <h2 className="text-lg font-semibold mb-2 text-indigo-300" id="current-question">
             {currentQ?.text}
           </h2>
-          <p className="text-xs text-gray-400 mb-2">Category: {currentQ?.category}</p>
+          <p className="text-md text-gray-100 mb-2">Category: {currentQ?.category}</p>
           <fieldset className="space-y-2 mt-4" role="radiogroup" aria-label="Answer options">
             <legend className="sr-only">Answer options</legend>
             {currentQ?.options.map((option) => (
@@ -354,30 +365,22 @@ const AccessibilityQuiz: React.FC = () => {
         {showExplanation && currentQ?.explanation && (
           <section className="p-4 mb-4 bg-gray-800 border border-gray-700 rounded-lg" aria-live="polite">
             <h3 className="font-semibold text-indigo-300 mb-1">Explanation:</h3>
-            <p className="text-sm text-gray-300">{currentQ.explanation}</p>
+            <p className="text-md text-gray-200">{currentQ.explanation}</p>
           </section>
         )}
         
         <nav className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
-          <div className="flex space-x-4">
-            {selectedAnswer && !answerChecked ? (
-              <button
-                onClick={handleCheckAnswer}
-                className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Check Answer
-              </button>
-            ) : (
-              <div></div>
-            )}
+          {selectedAnswer && !answerChecked ? (
             <button
-              onClick={openExitModal}
-              className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              onClick={handleCheckAnswer}
+              className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              Exit Quiz
+              Check Answer
             </button>
-          </div>
-          
+          ) : (
+            <div></div>
+          )}
+
           {answerChecked && (
             <button
               onClick={handleNextQuestion}
@@ -390,14 +393,16 @@ const AccessibilityQuiz: React.FC = () => {
         
         {/* Progress bar */}
         <footer className="mt-6">
-          <div className="flex justify-between text-xs text-gray-500 mb-1">
+          <div className="flex justify-between text-md text-gray-200 mb-1">
             <span>Progress</span>
-            <span aria-live="polite" aria-atomic="true">{Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%</span>
+            <span aria-live="polite" aria-atomic="true">
+              {Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%
+            </span>
           </div>
           <div 
             className="w-full bg-gray-700 rounded-full h-2"
             role="progressbar" 
-            aria-valuenow={(currentQuestion + 1)} 
+            aria-valuenow={currentQuestion + 1} 
             aria-valuemin={0} 
             aria-valuemax={shuffledQuestions.length}
             aria-label={`Question ${currentQuestion + 1} of ${shuffledQuestions.length}`}
