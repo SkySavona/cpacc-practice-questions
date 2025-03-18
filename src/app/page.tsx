@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { accessibilityQuestions, Question } from '@/types/accessibility-questions';
 
-
 const AccessibilityQuiz: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -102,18 +101,35 @@ const AccessibilityQuiz: React.FC = () => {
 
   if (!quizStarted) {
     return (
-      <div className="flex flex-col items-center max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+      <main className="flex flex-col items-center max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
         <h1 className="text-3xl font-bold mb-6 text-center text-indigo-400">Accessibility Knowledge Quiz</h1>
         <p className="text-lg mb-6 text-center text-gray-300">
           Test your knowledge of WCAG principles, accessibility standards, and disability concepts.
         </p>
+        <div className="mb-6">
+          <label htmlFor="category-select" className="block mb-2 text-gray-300">
+            Select Category:
+          </label>
+          <select
+            id="category-select"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="bg-gray-800 border border-gray-700 text-white p-2 rounded-lg w-full"
+          >
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </option>
+            ))}
+          </select>
+        </div>
         <button 
           onClick={handleStartQuiz}
-          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
           Start Quiz
         </button>
-      </div>
+      </main>
     );
   }
 
@@ -137,77 +153,109 @@ const AccessibilityQuiz: React.FC = () => {
     }
     
     return (
-      <div className="flex flex-col items-center max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+      <main className="flex flex-col items-center max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
         <h1 className="text-2xl font-bold mb-4 text-center text-indigo-400">Quiz Results</h1>
-        <p className="text-5xl font-bold my-6 text-indigo-500">{score} / {shuffledQuestions.length}</p>
-        {/* SVG Progress Circle and feedback */}
-        <p className={`text-xl mb-6 ${feedbackColor}`}>{feedback}</p>
+        <p className="text-5xl font-bold my-6 text-indigo-500">
+          <span aria-live="polite">{score} / {shuffledQuestions.length}</span>
+        </p>
+        <p className={`text-xl mb-6 ${feedbackColor}`} aria-live="polite">{feedback}</p>
         <div className="flex flex-wrap justify-center gap-4 mt-4">
           <button 
             onClick={handleRestartQuiz}
-            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            aria-label="Restart Quiz"
           >
             Restart Quiz
           </button>
           <button 
             onClick={() => setSelectedCategory("all")}
-            className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors"
+            className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            aria-label="Reset Category"
           >
             Reset Category
           </button>
         </div>
-      </div>
+      </main>
     );
   }
 
   const currentQ = shuffledQuestions[currentQuestion];
 
   return (
-    <div className="flex flex-col max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+    <main className="flex flex-col max-w-4xl mx-auto p-4 sm:p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+      <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">Accessibility Knowledge Quiz</h1>
+      
       {/* Quiz progress and score */}
-      <div className="p-4 mb-4 bg-gray-800 rounded-lg border border-gray-700">
-        <h2 className="text-lg font-semibold mb-2 text-indigo-300">
+      <div className="mb-2 text-sm text-gray-400">
+        Question {currentQuestion + 1} of {shuffledQuestions.length}
+      </div>
+
+      <section aria-labelledby="current-question" className="p-4 mb-4 bg-gray-800 rounded-lg border border-gray-700">
+        <h2 className="text-lg font-semibold mb-2 text-indigo-300" id="current-question">
           {currentQ?.text}
         </h2>
         <p className="text-xs text-gray-400 mb-2">Category: {currentQ?.category}</p>
-        <div className="space-y-2 mt-4">
+        <fieldset className="space-y-2 mt-4">
+          <legend className="sr-only">Answer options</legend>
           {currentQ?.options.map((option) => (
             <div 
               key={option.id}
-              onClick={() => handleAnswerSelect(option.id)}
-              className={`p-3 border rounded-lg cursor-pointer transition-colors ${getOptionClass(option.id)}`}
+              className="relative"
             >
-              <div className="flex items-center">
-                <div className={`h-6 w-6 rounded-full border flex items-center justify-center mr-3 ${
-                  selectedAnswer === option.id && !answerChecked
-                    ? 'border-indigo-500 bg-indigo-500 text-white' 
-                    : answerChecked && currentQ.answer === option.id
-                    ? 'border-green-500 bg-green-500 text-white'
-                    : answerChecked && selectedAnswer === option.id
-                    ? 'border-red-500 bg-red-500 text-white'
-                    : 'border-gray-500'
-                }`}>
-                  {option.id.toUpperCase()}
+              <input
+                type="radio"
+                id={`option-${option.id}`}
+                name="quiz-answer"
+                value={option.id}
+                checked={selectedAnswer === option.id}
+                onChange={() => handleAnswerSelect(option.id)}
+                disabled={answerChecked}
+                className="absolute opacity-0 w-full h-full cursor-pointer"
+                aria-describedby={answerChecked && currentQ.answer === option.id ? "correct-answer" : 
+                                 answerChecked && selectedAnswer === option.id && currentQ.answer !== option.id ? "incorrect-answer" : undefined}
+              />
+              <label 
+                htmlFor={`option-${option.id}`}
+                className={`block p-3 border rounded-lg cursor-pointer transition-colors ${getOptionClass(option.id)}`}
+              >
+                <div className="flex items-center">
+                  <div className={`h-6 w-6 rounded-full border flex items-center justify-center mr-3 ${
+                    selectedAnswer === option.id && !answerChecked
+                      ? 'border-indigo-500 bg-indigo-500 text-white' 
+                      : answerChecked && currentQ.answer === option.id
+                      ? 'border-green-500 bg-green-500 text-white'
+                      : answerChecked && selectedAnswer === option.id
+                      ? 'border-red-500 bg-red-500 text-white'
+                      : 'border-gray-500'
+                  }`}>
+                    {option.id.toUpperCase()}
+                  </div>
+                  <span>{option.text}</span>
                 </div>
-                <span>{option.text}</span>
-              </div>
+              </label>
+              {answerChecked && currentQ.answer === option.id && (
+                <span id="correct-answer" className="sr-only">Correct answer</span>
+              )}
+              {answerChecked && selectedAnswer === option.id && currentQ.answer !== option.id && (
+                <span id="incorrect-answer" className="sr-only">Incorrect answer</span>
+              )}
             </div>
           ))}
-        </div>
-      </div>
+        </fieldset>
+      </section>
       
       {showExplanation && currentQ?.explanation && (
-        <div className="p-4 mb-4 bg-gray-800 border border-gray-700 rounded-lg">
+        <section className="p-4 mb-4 bg-gray-800 border border-gray-700 rounded-lg" aria-live="polite">
           <h3 className="font-semibold text-indigo-300 mb-1">Explanation:</h3>
           <p className="text-sm text-gray-300">{currentQ.explanation}</p>
-        </div>
+        </section>
       )}
       
-      <div className="flex justify-between">
+      <nav className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
         {selectedAnswer && !answerChecked ? (
           <button
             onClick={handleCheckAnswer}
-            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           >
             Check Answer
           </button>
@@ -218,27 +266,34 @@ const AccessibilityQuiz: React.FC = () => {
         {answerChecked && (
           <button
             onClick={handleNextQuestion}
-            className="ml-auto px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors"
+            className="sm:ml-auto px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           >
             {currentQuestion < shuffledQuestions.length - 1 ? 'Next Question' : 'Finish Quiz'}
           </button>
         )}
-      </div>
+      </nav>
       
       {/* Progress bar */}
-      <div className="mt-6">
+      <footer className="mt-6">
         <div className="flex justify-between text-xs text-gray-500 mb-1">
           <span>Progress</span>
-          <span>{Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%</span>
+          <span aria-live="polite" aria-atomic="true">{Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%</span>
         </div>
-        <div className="w-full bg-gray-700 rounded-full h-2">
+        <div 
+          className="w-full bg-gray-700 rounded-full h-2"
+          role="progressbar" 
+          aria-valuenow={(currentQuestion + 1)} 
+          aria-valuemin={0} 
+          aria-valuemax={shuffledQuestions.length}
+          aria-label={`Question ${currentQuestion + 1} of ${shuffledQuestions.length}`}
+        >
           <div 
             className="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" 
             style={{ width: `${((currentQuestion + 1) / shuffledQuestions.length) * 100}%` }}
           ></div>
         </div>
-      </div>
-    </div>
+      </footer>
+    </main>
   );
 };
 
