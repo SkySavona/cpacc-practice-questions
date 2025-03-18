@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { accessibilityQuestions, Question } from '@/types/accessibility-questions';
 
 const AccessibilityQuiz: React.FC = () => {
@@ -14,6 +14,10 @@ const AccessibilityQuiz: React.FC = () => {
   const [filteredQuestions, setFilteredQuestions] = useState<Question[]>([]);
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [answerChecked, setAnswerChecked] = useState<boolean>(false);
+  const [showExitModal, setShowExitModal] = useState<boolean>(false);
+
+  // Ref to store the element that triggered the modal
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   // Use the imported accessibilityQuestions instead of a local array
   const questions: Question[] = accessibilityQuestions;
@@ -80,6 +84,25 @@ const AccessibilityQuiz: React.FC = () => {
     setQuizStarted(true);
   };
 
+  const handleExitConfirm = () => {
+    // Reset to initial state
+    setQuizStarted(false);
+    setShowExitModal(false);
+    setSelectedCategory("all");
+  };
+
+  const openExitModal = () => {
+    // Save the currently focused element
+    previousFocusRef.current = document.activeElement as HTMLElement;
+    setShowExitModal(true);
+  };
+
+  const closeExitModal = () => {
+    setShowExitModal(false);
+    // Return focus to the element that opened the modal
+    previousFocusRef.current?.focus();
+  };
+
   const getOptionClass = (optionId: string) => {
     if (!answerChecked) {
       return selectedAnswer === optionId 
@@ -97,6 +120,94 @@ const AccessibilityQuiz: React.FC = () => {
     } else {
       return 'border-gray-600 text-gray-400';
     }
+  };
+
+  // Exit Modal Component with focus trap and a Close button on the top right
+  const ExitModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+    const modalRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => {
+      // Set focus to the Close button when modal opens.
+      closeButtonRef.current?.focus();
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        // Get all focusable buttons inside the modal
+        const focusableButtons = modalRef.current?.querySelectorAll('button');
+        if (!focusableButtons || focusableButtons.length === 0) return;
+        const firstElement = focusableButtons[0] as HTMLElement;
+        const lastElement = focusableButtons[focusableButtons.length - 1] as HTMLElement;
+
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            // If Shift+Tab is pressed on the first element, move focus to the last
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            // If Tab is pressed on the last element, move focus to the first
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          onClose();
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [onClose]);
+
+    return (
+      <div 
+        className="fixed inset-0 flex items-center justify-center z-50"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="exit-modal-title"
+      >
+        <div className="absolute inset-0 bg-black opacity-50" onClick={onClose}></div>
+        <div 
+          ref={modalRef}
+          className="relative bg-gray-900 p-6 rounded-lg shadow-lg z-10 max-w-sm mx-auto text-white"
+        >
+          {/* Close button (×) positioned at the top right */}
+          <button 
+            ref={closeButtonRef}
+            onClick={onClose}
+            className="absolute top-2 right-2 text-2xl font-bold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 p-2 rounded-full"
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+          <h2 id="exit-modal-title" className="text-xl font-bold mb-4 text-center">
+            Exit Quiz?
+          </h2>
+          <p className="mb-6 text-center">
+            Are you sure you want to exit? All progress will be lost.
+          </p>
+          <div className="flex justify-center space-x-4">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleExitConfirm}
+              className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            >
+              Exit Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   if (!quizStarted) {
@@ -125,7 +236,7 @@ const AccessibilityQuiz: React.FC = () => {
         </div>
         <button 
           onClick={handleStartQuiz}
-          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           Start Quiz
         </button>
@@ -162,14 +273,14 @@ const AccessibilityQuiz: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-4 mt-4">
           <button 
             onClick={handleRestartQuiz}
-            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             aria-label="Restart Quiz"
           >
             Restart Quiz
           </button>
           <button 
             onClick={() => setSelectedCategory("all")}
-            className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            className="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
             aria-label="Reset Category"
           >
             Reset Category
@@ -182,40 +293,37 @@ const AccessibilityQuiz: React.FC = () => {
   const currentQ = shuffledQuestions[currentQuestion];
 
   return (
-    <main className="flex flex-col max-w-4xl mx-auto p-4 sm:p-6 bg-gray-900 rounded-lg shadow-lg text-white">
-      <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">Accessibility Knowledge Quiz</h1>
-      
-      {/* Quiz progress and score */}
-      <div className="mb-2 text-sm text-gray-400">
-        Question {currentQuestion + 1} of {shuffledQuestions.length}
-      </div>
+    <>
+      <main className="flex flex-col max-w-4xl mx-auto p-4 sm:p-6 bg-gray-900 rounded-lg shadow-lg text-white">
+        <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">Accessibility Knowledge Quiz</h1>
+        
+        {/* Quiz progress and score */}
+        <div className="mb-2 text-sm text-gray-400">
+          Question {currentQuestion + 1} of {shuffledQuestions.length}
+        </div>
 
-      <section aria-labelledby="current-question" className="p-4 mb-4 bg-gray-800 rounded-lg border border-gray-700">
-        <h2 className="text-lg font-semibold mb-2 text-indigo-300" id="current-question">
-          {currentQ?.text}
-        </h2>
-        <p className="text-xs text-gray-400 mb-2">Category: {currentQ?.category}</p>
-        <fieldset className="space-y-2 mt-4">
-          <legend className="sr-only">Answer options</legend>
-          {currentQ?.options.map((option) => (
-            <div 
-              key={option.id}
-              className="relative"
-            >
-              <input
-                type="radio"
-                id={`option-${option.id}`}
-                name="quiz-answer"
-                value={option.id}
-                checked={selectedAnswer === option.id}
-                onChange={() => handleAnswerSelect(option.id)}
-                disabled={answerChecked}
-                className="absolute opacity-0 w-full h-full cursor-pointer"
-                aria-describedby={answerChecked && currentQ.answer === option.id ? "correct-answer" : 
-                                 answerChecked && selectedAnswer === option.id && currentQ.answer !== option.id ? "incorrect-answer" : undefined}
-              />
-              <label 
-                htmlFor={`option-${option.id}`}
+        <section aria-labelledby="current-question" className="p-4 mb-4 bg-gray-800 rounded-lg border border-gray-700">
+          <h2 className="text-lg font-semibold mb-2 text-indigo-300" id="current-question">
+            {currentQ?.text}
+          </h2>
+          <p className="text-xs text-gray-400 mb-2">Category: {currentQ?.category}</p>
+          <fieldset className="space-y-2 mt-4" role="radiogroup" aria-label="Answer options">
+            <legend className="sr-only">Answer options</legend>
+            {currentQ?.options.map((option) => (
+              <div 
+                key={option.id}
+                role="radio"
+                aria-checked={selectedAnswer === option.id}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (!answerChecked && (e.key === 'Enter' || e.key === ' ')) {
+                    e.preventDefault();
+                    handleAnswerSelect(option.id);
+                  }
+                }}
+                onClick={() => {
+                  if (!answerChecked) handleAnswerSelect(option.id);
+                }}
                 className={`block p-3 border rounded-lg cursor-pointer transition-colors ${getOptionClass(option.id)}`}
               >
                 <div className="flex items-center">
@@ -232,68 +340,77 @@ const AccessibilityQuiz: React.FC = () => {
                   </div>
                   <span>{option.text}</span>
                 </div>
-              </label>
-              {answerChecked && currentQ.answer === option.id && (
-                <span id="correct-answer" className="sr-only">Correct answer</span>
-              )}
-              {answerChecked && selectedAnswer === option.id && currentQ.answer !== option.id && (
-                <span id="incorrect-answer" className="sr-only">Incorrect answer</span>
-              )}
-            </div>
-          ))}
-        </fieldset>
-      </section>
-      
-      {showExplanation && currentQ?.explanation && (
-        <section className="p-4 mb-4 bg-gray-800 border border-gray-700 rounded-lg" aria-live="polite">
-          <h3 className="font-semibold text-indigo-300 mb-1">Explanation:</h3>
-          <p className="text-sm text-gray-300">{currentQ.explanation}</p>
+                {answerChecked && currentQ.answer === option.id && (
+                  <span className="sr-only" id="correct-answer">Correct answer</span>
+                )}
+                {answerChecked && selectedAnswer === option.id && currentQ.answer !== option.id && (
+                  <span className="sr-only" id="incorrect-answer">Incorrect answer</span>
+                )}
+              </div>
+            ))}
+          </fieldset>
         </section>
-      )}
-      
-      <nav className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
-        {selectedAnswer && !answerChecked ? (
-          <button
-            onClick={handleCheckAnswer}
-            className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-          >
-            Check Answer
-          </button>
-        ) : (
-          <div></div>
+        
+        {showExplanation && currentQ?.explanation && (
+          <section className="p-4 mb-4 bg-gray-800 border border-gray-700 rounded-lg" aria-live="polite">
+            <h3 className="font-semibold text-indigo-300 mb-1">Explanation:</h3>
+            <p className="text-sm text-gray-300">{currentQ.explanation}</p>
+          </section>
         )}
         
-        {answerChecked && (
-          <button
-            onClick={handleNextQuestion}
-            className="sm:ml-auto px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-          >
-            {currentQuestion < shuffledQuestions.length - 1 ? 'Next Question' : 'Finish Quiz'}
-          </button>
-        )}
-      </nav>
-      
-      {/* Progress bar */}
-      <footer className="mt-6">
-        <div className="flex justify-between text-xs text-gray-500 mb-1">
-          <span>Progress</span>
-          <span aria-live="polite" aria-atomic="true">{Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%</span>
-        </div>
-        <div 
-          className="w-full bg-gray-700 rounded-full h-2"
-          role="progressbar" 
-          aria-valuenow={(currentQuestion + 1)} 
-          aria-valuemin={0} 
-          aria-valuemax={shuffledQuestions.length}
-          aria-label={`Question ${currentQuestion + 1} of ${shuffledQuestions.length}`}
-        >
+        <nav className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
+          <div className="flex space-x-4">
+            {selectedAnswer && !answerChecked ? (
+              <button
+                onClick={handleCheckAnswer}
+                className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Check Answer
+              </button>
+            ) : (
+              <div></div>
+            )}
+            <button
+              onClick={openExitModal}
+              className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            >
+              Exit Quiz
+            </button>
+          </div>
+          
+          {answerChecked && (
+            <button
+              onClick={handleNextQuestion}
+              className="sm:ml-auto px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              {currentQuestion < shuffledQuestions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+            </button>
+          )}
+        </nav>
+        
+        {/* Progress bar */}
+        <footer className="mt-6">
+          <div className="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Progress</span>
+            <span aria-live="polite" aria-atomic="true">{Math.round(((currentQuestion + 1) / shuffledQuestions.length) * 100)}%</span>
+          </div>
           <div 
-            className="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" 
-            style={{ width: `${((currentQuestion + 1) / shuffledQuestions.length) * 100}%` }}
-          ></div>
-        </div>
-      </footer>
-    </main>
+            className="w-full bg-gray-700 rounded-full h-2"
+            role="progressbar" 
+            aria-valuenow={(currentQuestion + 1)} 
+            aria-valuemin={0} 
+            aria-valuemax={shuffledQuestions.length}
+            aria-label={`Question ${currentQuestion + 1} of ${shuffledQuestions.length}`}
+          >
+            <div 
+              className="bg-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" 
+              style={{ width: `${((currentQuestion + 1) / shuffledQuestions.length) * 100}%` }}
+            ></div>
+          </div>
+        </footer>
+      </main>
+      {showExitModal && <ExitModal onClose={closeExitModal} />}
+    </>
   );
 };
 

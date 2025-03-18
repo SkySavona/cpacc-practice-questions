@@ -1,6 +1,6 @@
-# 🧠 Accessibility Knowledge Quiz
+# 🧠 CPACC Practice Questions
 
-An interactive quiz application for testing your knowledge of accessibility concepts, including topics relevant to the Certified Professional in Accessibility Core Competencies (CPACC) examination.
+An interactive quiz application created by students for students preparing for the Certified Professional in Accessibility Core Competencies (CPACC) examination. This educational tool is not affiliated with the International Association of Accessibility Professionals (IAAP) or any other organization.
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -18,8 +18,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/accessibility-knowledge-quiz.git
-cd accessibility-knowledge-quiz
+git clone https://github.com/SkySavona/cpacc-practice-questions.git
+cd cpacc-practice-questions
 ```
 
 Then, install dependencies:
@@ -68,15 +68,6 @@ This application is built with:
 - 🎨 Tailwind CSS for styling
 - ♿ Accessibility-first approach with proper ARIA attributes and keyboard navigation
 
-## 📚 Source Material
-The quiz questions and content were adapted from:
-
-- Deque University CPACC study material
-- Web Accessibility "Deep Dive" course
-- IAAP WAS Certification Preparation 2.2
-
-These resources provided a foundation for creating educational content focused on accessibility concepts.
-
 ## 📚 Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -94,6 +85,21 @@ To learn more about CPACC certification:
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+The source code for this project is available on GitHub at [SkySavona/cpacc-practice-questions](https://github.com/SkySavona/cpacc-practice-questions).
+
+## ℹ️ Disclaimer
+
+This application is created by students for educational purposes only. We are not affiliated with the International Association of Accessibility Professionals (IAAP) or any certification body. The questions provided are based on publicly available study materials and are intended as a supplementary study resource. This is not an official CPACC preparation tool.
+
+## 📚 Source Material
+
+The quiz questions and content were adapted from:
+- Deque University CPACC study material
+- Web Accessibility "Deep Dive" course
+- IAAP WAS Certification Preparation 2.2
+
+These resources provided a foundation for creating educational content focused on accessibility concepts.
 
 ## 🔍 Question Accuracy
 
