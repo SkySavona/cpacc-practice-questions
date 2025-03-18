@@ -177,14 +177,14 @@ const AccessibilityQuiz: React.FC = () => {
           className="relative bg-gray-900 p-6 rounded-lg shadow-lg z-10 max-w-sm mx-auto text-white"
         >
           {/* Close button (×) positioned at the top right */}
-       <button 
-  ref={closeButtonRef}
-  onClick={onClose}
-  className="absolute top-2 right-2 text-2xl font-bold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-gray-900 rounded-full w-10 h-10 flex items-center justify-center"
-  aria-label="Close modal"
->
-  ×
-</button>
+          <button 
+            ref={closeButtonRef}
+            onClick={onClose}
+            className="absolute top-2 right-2 text-2xl font-bold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-4 focus:ring-offset-gray-900 rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Close modal"
+          >
+            ×
+          </button>
 
           <h2 id="exit-modal-title" className="text-xl font-bold mb-4 text-center">
             Exit Quiz?
@@ -214,11 +214,11 @@ const AccessibilityQuiz: React.FC = () => {
   if (!quizStarted) {
     return (
       <main className="flex flex-col items-center max-w-4xl mx-auto p-6 bg-gray-900 rounded-lg shadow-lg text-white">
-        <h1 className="text-3xl font-bold mb-6 text-center text-indigo-400">Accessibility Knowledge Quiz</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-indigo-400 break-words">CPACC Practice Questions</h1>
         <p className="text-lg mb-6 text-center text-gray-300">
           Test your knowledge of WCAG principles, accessibility standards, and disability concepts.
         </p>
-        <div className="mb-6">
+        <div className="mb-6 w-full">
           <label htmlFor="category-select" className="block mb-2 text-gray-300">
             Select Category:
           </label>
@@ -270,7 +270,7 @@ const AccessibilityQuiz: React.FC = () => {
         <p className="text-5xl font-bold my-6 text-indigo-500">
           <span aria-live="polite">{score} / {shuffledQuestions.length}</span>
         </p>
-        <p className={`text-xl mb-6 ${feedbackColor}`} aria-live="polite">{feedback}</p>
+        <p className={`text-xl mb-6 ${feedbackColor} text-center`} aria-live="polite">{feedback}</p>
         <div className="flex flex-wrap justify-center gap-4 mt-4">
           <button 
             onClick={handleRestartQuiz}
@@ -304,8 +304,8 @@ const AccessibilityQuiz: React.FC = () => {
           Exit Quiz
         </button>
 
-        <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400">
-          Accessibility Knowledge Quiz
+        <h1 className="text-xl sm:text-2xl font-bold mb-4 text-indigo-400 break-words pr-24">
+         CPACC Practice Questions
         </h1>
         
         {/* Quiz progress and score */}
@@ -337,8 +337,8 @@ const AccessibilityQuiz: React.FC = () => {
                 }}
                 className={`block p-3 border rounded-lg cursor-pointer transition-colors ${getOptionClass(option.id)}`}
               >
-                <div className="flex items-center">
-                  <div className={`h-6 w-6 rounded-full border flex items-center justify-center mr-3 ${
+                <div className="flex items-start">
+                  <div className={`h-6 w-6 rounded-full border flex items-center justify-center mr-3 flex-shrink-0 ${
                     selectedAnswer === option.id && !answerChecked
                       ? 'border-indigo-500 bg-indigo-500 text-white' 
                       : answerChecked && currentQ.answer === option.id
@@ -349,7 +349,7 @@ const AccessibilityQuiz: React.FC = () => {
                   }`}>
                     {option.id.toUpperCase()}
                   </div>
-                  <span>{option.text}</span>
+                  <span className="flex-1">{option.text}</span>
                 </div>
                 {answerChecked && currentQ.answer === option.id && (
                   <span className="sr-only" id="correct-answer">Correct answer</span>
