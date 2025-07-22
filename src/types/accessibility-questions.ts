@@ -2220,7 +2220,7 @@ export const accessibilityQuestions: Question[] = [
     ],
     answer: "b",
     category: "Assistive Technology",
-    explanation: "Braille embossers print raised braille characters on paper, translating digital text into a tactile hard copy."
+    explanation: "Braille embossers print raised braille characters on paper, translating digital text into a tactile hard copy.."
   }
 
 
