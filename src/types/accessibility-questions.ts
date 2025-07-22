@@ -1596,5 +1596,632 @@ export const accessibilityQuestions: Question[] = [
     answer: "c",
     category: "Disability Categories",
     explanation: "People using screen readers or those with color-blindness won't detect purely visual cues. An accessible form needs text-based or programmatic indicators too."
+  },
+  // === Assistive Technology ===
+{
+  id: 121,
+  text: "Which assistive technology converts on-screen text into synthesized speech for users with visual impairments?",
+  options: [
+    { id: "a", text: "Screen magnifier" },
+    { id: "b", text: "Refreshable Braille display" },
+    { id: "c", text: "Screen reader" },
+    { id: "d", text: "Voice recognition software" }
+  ],
+  answer: "c",
+  category: "Assistive Technology",
+  explanation: "Screen readers convert text to speech, enabling blind and low-vision users to consume digital content."
+},
+{
+  id: 122,
+  text: "What device allows users to read text output by a computer through raised Braille characters?",
+  options: [
+    { id: "a", text: "Screen reader" },
+    { id: "b", text: "Screen magnifier" },
+    { id: "c", text: "Refreshable Braille display" },
+    { id: "d", text: "OCR scanner" }
+  ],
+  answer: "c",
+  category: "Assistive Technology",
+  explanation: "Refreshable Braille displays render on-screen text as tactile Braille cells for users who read Braille."
+},
+{
+  id: 123,
+  text: "Which technology lets users with mobility impairments interact using single-switch input?",
+  options: [
+    { id: "a", text: "Voice recognition" },
+    { id: "b", text: "Switch scanning" },
+    { id: "c", text: "Gesture control" },
+    { id: "d", text: "Eye-tracking" }
+  ],
+  answer: "b",
+  category: "Assistive Technology",
+  explanation: "Switch scanning allows users to select items sequentially with a single switch input, useful for those with limited mobility."
+},
+{
+  id: 124,
+  text: "Which assistive tool uses spoken commands to control computer functions?",
+  options: [
+    { id: "a", text: "OCR scanner" },
+    { id: "b", text: "Voice recognition software" },
+    { id: "c", text: "Screen magnifier" },
+    { id: "d", text: "Alternative keyboard" }
+  ],
+  answer: "b",
+  category: "Assistive Technology",
+  explanation: "Voice recognition software interprets spoken words as commands or text input, aiding users with physical disabilities."
+},
+{
+  id: 125,
+  text: "What assistive device tracks eye movement to control cursor position for users who cannot use their hands?",
+  options: [
+    { id: "a", text: "Eye-tracking system" },
+    { id: "b", text: "Gesture sensor" },
+    { id: "c", text: "Switch control" },
+    { id: "d", text: "Sip-and-puff device" }
+  ],
+  answer: "a",
+  category: "Assistive Technology",
+  explanation: "Eye-tracking systems detect gaze direction to move the cursor, enabling hands-free interaction."
+},
+{
+  id: 126,
+  text: "Which feature provides text alternatives for spoken audio content in videos?",
+  options: [
+    { id: "a", text: "Subtitles" },
+    { id: "b", text: "Closed captions" },
+    { id: "c", text: "Transcripts" },
+    { id: "d", text: "Audio descriptions" }
+  ],
+  answer: "b",
+  category: "Assistive Technology",
+  explanation: "Closed captions display text of dialogue and important sounds for deaf and hard-of-hearing users."
+},
+{
+  id: 127,
+  text: "An AAC device is primarily used by individuals with which type of disability?",
+  options: [
+    { id: "a", text: "Visual impairments" },
+    { id: "b", text: "Mobility impairments" },
+    { id: "c", text: "Speech disabilities" },
+    { id: "d", text: "Cognitive disabilities" }
+  ],
+  answer: "c",
+  category: "Assistive Technology",
+  explanation: "Augmentative and Alternative Communication devices assist individuals with speech disabilities to communicate."
+},
+
+// === Disability Etiquette ===
+{
+  id: 128,
+  text: "Which is best practice when you first meet a person using a wheelchair?",
+  options: [
+    { id: "a", text: "Pat their wheelchair" },
+    { id: "b", text: "Lean on their wheelchair" },
+    { id: "c", text: "Speak directly to the person at eye level" },
+    { id: "d", text: "Ask if they need help before assisting" }
+  ],
+  answer: "d",
+  category: "Disability Etiquette",
+  explanation: "Always ask before assisting, rather than assuming the person needs help."
+},
+{
+  id: 129,
+  text: "What language approach is considered person-first?",
+  options: [
+    { id: "a", text: "Disabled person" },
+    { id: "b", text: "Person with a disability" },
+    { id: "c", text: "Special needs person" },
+    { id: "d", text: "Handicapped individual" }
+  ],
+  answer: "b",
+  category: "Disability Etiquette",
+  explanation: "Person-first language emphasizes the person before the disability."
+},
+{
+  id: 130,
+  text: "When encountering a service dog, which should you NOT do?",
+  options: [
+    { id: "a", text: "Pet or distract the dog" },
+    { id: "b", text: "Speak to the handler first" },
+    { id: "c", text: "Respect the dog is working" },
+    { id: "d", text: "Use normal voice tone" }
+  ],
+  answer: "a",
+  category: "Disability Etiquette",
+  explanation: "Service dogs are working animals; do not pet or distract them without permission."
+},
+{
+  id: 131,
+  text: "Which is correct etiquette when offering assistance to someone with a visual impairment?",
+  options: [
+    { id: "a", text: "Grab their arm and lead them" },
+    { id: "b", text: "Yell directions from afar" },
+    { id: "c", text: "Ask if assistance is needed before guiding" },
+    { id: "d", text: "Assume they cannot navigate independently" }
+  ],
+  answer: "c",
+  category: "Disability Etiquette",
+  explanation: "Always ask before guiding, and let them take your arm rather than grabbing."
+},
+{
+  id: 132,
+  text: "When communicating with a Deaf individual who signs, what is appropriate?",
+  options: [
+    { id: "a", text: "Speak loudly if they can lip-read" },
+    { id: "b", text: "Speak normally and provide pen and paper if needed" },
+    { id: "c", text: "Ignore and wait for an interpreter" },
+    { id: "d", text: "Shout each word clearly" }
+  ],
+  answer: "b",
+  category: "Disability Etiquette",
+  explanation: "Speak normally and offer alternative communication methods if they prefer not to use sign language."
+},
+
+// === Disability Statistics ===
+{
+  id: 133,
+  text: "Approximately what percentage of the global population has some form of disability?",
+  options: [
+    { id: "a", text: "5%" },
+    { id: "b", text: "10%" },
+    { id: "c", text: "15%" },
+    { id: "d", text: "20%" }
+  ],
+  answer: "c",
+  category: "Disability Statistics",
+  explanation: "About 15% of people worldwide live with some form of disability (WHO)."
+},
+{
+  id: 134,
+  text: "What percentage of people with disabilities experience significant activity limitations?",
+  options: [
+    { id: "a", text: "2%" },
+    { id: "b", text: "5%" },
+    { id: "c", text: "10%" },
+    { id: "d", text: "15%" }
+  ],
+  answer: "b",
+  category: "Disability Statistics",
+  explanation: "Approximately 5% experience severe disability with substantial difficulties in daily activities."
+},
+{
+  id: 135,
+  text: "Among adults aged 65 and older, what is the approximate rate of mobility impairment?",
+  options: [
+    { id: "a", text: "10%" },
+    { id: "b", text: "25%" },
+    { id: "c", text: "40%" },
+    { id: "d", text: "60%" }
+  ],
+  answer: "c",
+  category: "Disability Statistics",
+  explanation: "About 40% of older adults report some form of mobility impairment."
+},
+
+// === UDL Principles ===
+{
+  id: 136,
+  text: "Which UDL principle involves presenting information in multiple formats?",
+  options: [
+    { id: "a", text: "Multiple Means of Engagement" },
+    { id: "b", text: "Multiple Means of Representation" },
+    { id: "c", text: "Multiple Means of Expression" },
+    { id: "d", text: "Multiple Means of Action" }
+  ],
+  answer: "b",
+  category: "UDL Principles",
+  explanation: "Representation focuses on offering information through varied media (text, audio, visuals)."
+},
+{
+  id: 137,
+  text: "Which UDL guideline focuses on sustaining learners’ interest?",
+  options: [
+    { id: "a", text: "Multiple Means of Representation" },
+    { id: "b", text: "Multiple Means of Action and Expression" },
+    { id: "c", text: "Multiple Means of Engagement" },
+    { id: "d", text: "Multiple Means of Networking" }
+  ],
+  answer: "c",
+  category: "UDL Principles",
+  explanation: "Engagement addresses how to motivate and maintain learner interest."
+},
+{
+  id: 138,
+  text: "Under UDL, which principle allows learners to demonstrate knowledge in different ways?",
+  options: [
+    { id: "a", text: "Multiple Means of Representation" },
+    { id: "b", text: "Multiple Means of Action and Expression" },
+    { id: "c", text: "Multiple Means of Engagement" },
+    { id: "d", text: "Multiple Means of Collaboration" }
+  ],
+  answer: "b",
+  category: "UDL Principles",
+  explanation: "Action & Expression encourages diverse methods for learners to show understanding."
+},
+{
+  id: 139,
+  text: "How does UDL differ from general Universal Design?",
+  options: [
+    { id: "a", text: "UDL applies only to digital products" },
+    { id: "b", text: "UDL is focused on learning environments" },
+    { id: "c", text: "UDL replaces WCAG guidelines" },
+    { id: "d", text: "UDL requires Braille implementation" }
+  ],
+  answer: "b",
+  category: "UDL Principles",
+  explanation: "UDL is a framework for educational settings, extending universal design to learning."
+},
+{
+  id: 140,
+  text: "Providing captions on videos is an example of which UDL guideline?",
+  options: [
+    { id: "a", text: "Multiple Means of Engagement" },
+    { id: "b", text: "Multiple Means of Representation" },
+    { id: "c", text: "Multiple Means of Action and Expression" },
+    { id: "d", text: "Multiple Means of Regulation" }
+  ],
+  answer: "b",
+  category: "UDL Principles",
+  explanation: "Captions offer an alternative representation of audio content for diverse learners."
+},
+
+// === Accessibility Business Case ===
+{
+  id: 141,
+  text: "Which benefit is a primary business case for investing in web accessibility?",
+  options: [
+    { id: "a", text: "Reduced page load times" },
+    { id: "b", text: "Increased audience reach and market size" },
+    { id: "c", text: "Simplified code base" },
+    { id: "d", text: "Lower SEO rankings" }
+  ],
+  answer: "b",
+  category: "Accessibility Business Case",
+  explanation: "Accessible sites reach more users, expanding market potential."
+},
+{
+  id: 142,
+  text: "How does accessibility mitigate legal risk for organizations?",
+  options: [
+    { id: "a", text: "By reducing hosting costs" },
+    { id: "b", text: "By lowering the chance of ADA lawsuits or compliance penalties" },
+    { id: "c", text: "By eliminating the need for user testing" },
+    { id: "d", text: "By increasing page weight" }
+  ],
+  answer: "b",
+  category: "Accessibility Business Case",
+  explanation: "Compliance reduces exposure to lawsuits and related financial penalties."
+},
+{
+  id: 143,
+  text: "Which SEO benefit is directly tied to accessible content?",
+  options: [
+    { id: "a", text: "Higher bounce rates" },
+    { id: "b", text: "Better alt text indexing by search engines" },
+    { id: "c", text: "Slower page render times" },
+    { id: "d", text: "Increased use of tables" }
+  ],
+  answer: "b",
+  category: "Accessibility Business Case",
+  explanation: "Proper alt text improves search engine understanding and indexing of images."
+},
+{
+  id: 144,
+  text: "How does inclusive design enhance brand reputation?",
+  options: [
+    { id: "a", text: "By reducing brand visibility" },
+    { id: "b", text: "By demonstrating corporate social responsibility and inclusivity" },
+    { id: "c", text: "By limiting site features" },
+    { id: "d", text: "By increasing page load times" }
+  ],
+  answer: "b",
+  category: "Accessibility Business Case",
+  explanation: "Inclusive brands are viewed positively, strengthening customer loyalty and reputation."
+},
+{
+  id: 145,
+  text: "Why is early integration of accessibility more cost-effective than retrofitting?",
+  options: [
+    { id: "a", text: "Early fixes avoid redesign and rework costs later" },
+    { id: "b", text: "Early fixes require no testing" },
+    { id: "c", text: "Early fixes reduce code complexity arbitrarily" },
+    { id: "d", text: "Early fixes eliminate the need for WCAG guidelines" }
+  ],
+  answer: "a",
+  category: "Accessibility Business Case",
+  explanation: "Incorporating accessibility from the start avoids the high cost of redesigning or patching later."
+},
+
+// === Accessibility Management ===
+{
+  id: 146,
+  text: "What is a VPAT (Voluntary Product Accessibility Template)?",
+  options: [
+    { id: "a", text: "A user survey for accessibility feedback" },
+    { id: "b", text: "A checklist for internal UX reviews" },
+    { id: "c", text: "A standardized report detailing product conformance to accessibility standards" },
+    { id: "d", text: "A code library for accessibility widgets" }
+  ],
+  answer: "c",
+  category: "Accessibility Management",
+  explanation: "A VPAT documents how a product meets WCAG, Section 508, and other standards."
+},
+{
+  id: 147,
+  text: "What key element should an organizational accessibility policy include?",
+  options: [
+    { id: "a", text: "Only front-end development guidelines" },
+    { id: "b", text: "Roles and responsibilities for maintaining accessibility" },
+    { id: "c", text: "Expired legal references" },
+    { id: "d", text: "Brand color palette details" }
+  ],
+  answer: "b",
+  category: "Accessibility Management",
+  explanation: "Clear roles ensure accountability for ongoing accessibility maintenance."
+},
+{
+  id: 148,
+  text: "In procurement, what must buyers consider to ensure accessible product purchasing?",
+  options: [
+    { id: "a", text: "Lowest price only" },
+    { id: "b", text: "Product conformance to accessibility standards" },
+    { id: "c", text: "Vendor brand reputation only" },
+    { id: "d", text: "Delivery time only" }
+  ],
+  answer: "b",
+  category: "Accessibility Management",
+  explanation: "Accessible procurement mandates evaluating products for compliance before purchase."
+},
+{
+  id: 149,
+  text: "A level 1 accessibility maturity model organization is characterized by what?",
+  options: [
+    { id: "a", text: "Established accessibility governance and training" },
+    { id: "b", text: "Ad hoc or no formal accessibility processes" },
+    { id: "c", text: "Continuous user testing with disabilities" },
+    { id: "d", text: "Integrated automated scanning in CI/CD" }
+  ],
+  answer: "b",
+  category: "Accessibility Management",
+  explanation: "Level 1 is unstructured, with no consistent accessibility efforts."
+},
+{
+  id: 150,
+  text: "What is a primary role of an accessibility governance committee?",
+  options: [
+    { id: "a", text: "Code minification" },
+    { id: "b", text: "Overseeing policy compliance and strategic guidance" },
+    { id: "c", text: "Designing brand assets" },
+    { id: "d", text: "Server maintenance" }
+  ],
+  answer: "b",
+  category: "Accessibility Management",
+  explanation: "Committees set strategy, monitor compliance, and drive organizational adoption."
+},
+
+// === International Treaties ===
+{
+  id: 151,
+  text: "What is the primary purpose of the UN Convention on the Rights of Persons with Disabilities (CRPD)?",
+  options: [
+    { id: "a", text: "To fund assistive technology research" },
+    { id: "b", text: "To promote and protect the rights of persons with disabilities globally" },
+    { id: "c", text: "To regulate EU accessibility standards" },
+    { id: "d", text: "To create national accessibility laws" }
+  ],
+  answer: "b",
+  category: "International Treaties",
+  explanation: "The CRPD is a human rights treaty ensuring full and equal rights for persons with disabilities."
+},
+{
+  id: 152,
+  text: "The Marrakesh VIP Treaty facilitates what?",
+  options: [
+    { id: "a", text: "Global distribution of accessible books to people with print disabilities" },
+    { id: "b", text: "Trade of assistive devices" },
+    { id: "c", text: "Standardizing WCAG across countries" },
+    { id: "d", text: "Licensing requirements for screen readers" }
+  ],
+  answer: "a",
+  category: "International Treaties",
+  explanation: "It allows import/export of copyrighted works in accessible formats for visually impaired individuals."
+},
+{
+  id: 153,
+  text: "By ratifying the CRPD, a country commits to what action?",
+  options: [
+    { id: "a", text: "Adopting WCAG 2.0 as national law" },
+    { id: "b", text: "Reporting progress on disability rights implementation" },
+    { id: "c", text: "Funding assistive tech startups" },
+    { id: "d", text: "Eliminating all disability benefits" }
+  ],
+  answer: "b",
+  category: "International Treaties",
+  explanation: "CRPD ratification requires regular reports on measures taken to uphold treaty obligations."
+},
+{
+  id: 154,
+  text: "Which optional protocol allows individuals to file complaints under the CRPD?",
+  options: [
+    { id: "a", text: "Disability Rights Protocol" },
+    { id: "b", text: "Individual Communications Protocol" },
+    { id: "c", text: "Complaints Optional Protocol" },
+    { id: "d", text: "Enforcement Protocol" }
+  ],
+  answer: "b",
+  category: "International Treaties",
+  explanation: "The Optional Protocol to CRPD establishes a communications procedure for individual complaints."
+},
+{
+  id: 155,
+  text: "Which body monitors implementation of the CRPD?",
+  options: [
+    { id: "a", text: "UN Human Rights Council" },
+    { id: "b", text: "CRPD Committee" },
+    { id: "c", text: "World Health Organization" },
+    { id: "d", text: "ILO Committee" }
+  ],
+  answer: "b",
+  category: "International Treaties",
+  explanation: "The Committee on the Rights of Persons with Disabilities reviews state reports on CRPD implementation."
+},
+  // New questions added from Topics: Blindness, Low Vision, Color-Blindness, Deafblindness
+  {
+    id: 156,
+    text: "What is the most appropriate fix when an image on a website lacks alternative text?",
+    options: [
+      { id: "a", text: "Increase the image's contrast" },
+      { id: "b", text: "Add descriptive alternative text via the alt attribute" },
+      { id: "c", text: "Convert the image to grayscale" },
+      { id: "d", text: "Reduce the image size" }
+    ],
+    answer: "b",
+    category: "WCAG Guidelines",
+    explanation: "Adding descriptive alt text ensures that non-text content is accessible to users of assistive technologies."
+  },
+  {
+    id: 157,
+    text: "Which assistive feature can help blind individuals navigate physical spaces by indicating the edge of platforms or the start of staircases?",
+    options: [
+      { id: "a", text: "GPS-based audio guidance" },
+      { id: "b", text: "Tactile ground surface indicators" },
+      { id: "c", text: "Braille signage" },
+      { id: "d", text: "High-contrast paint" }
+    ],
+    answer: "b",
+    category: "Assistive Technology",
+    explanation: "Tactile ground surface indicators, like raised tiles, help blind people feel their surroundings underfoot and navigate safely."
+  },
+  {
+    id: 158,
+    text: "Which assistive technology is most commonly used by people with low vision to read small on-screen text?",
+    options: [
+      { id: "a", text: "Screen reader" },
+      { id: "b", text: "Screen magnifier" },
+      { id: "c", text: "Refreshable braille display" },
+      { id: "d", text: "Voice recognition software" }
+    ],
+    answer: "b",
+    category: "Assistive Technology",
+    explanation: "Screen magnifiers enlarge portions of the screen, making text and images easier to see for users with low vision."
+  },
+  {
+    id: 159,
+    text: "A user with low vision has difficulty reading light gray text on a white background. What WCAG issue does this represent?",
+    options: [
+      { id: "a", text: "Lack of keyboard navigation" },
+      { id: "b", text: "Insufficient color contrast" },
+      { id: "c", text: "Missing alt text" },
+      { id: "d", text: "Non-semantic markup" }
+    ],
+    answer: "b",
+    category: "WCAG Guidelines",
+    explanation: "Low contrast between text and background makes content hard to read for users with low vision, violating WCAG contrast requirements."
+  },
+  {
+    id: 160,
+    text: "What problem can occur if a website’s layout does not support reflow or maintain content when zoomed?",
+    options: [
+      { id: "a", text: "The site loads too slowly" },
+      { id: "b", text: "Content may be cut off and become unreadable" },
+      { id: "c", text: "Screen reader compatibility increases" },
+      { id: "d", text: "Forms will submit incorrectly" }
+    ],
+    answer: "b",
+    category: "WCAG Guidelines",
+    explanation: "Sites that do not reflow when zoomed can cut off or hide content, making it inaccessible for users who rely on magnification."
+  },
+  {
+    id: 161,
+    text: "Why might a self-voicing interface on a public kiosk not fully meet the interactive needs of users with low vision?",
+    options: [
+      { id: "a", text: "It often lacks detailed audio output capabilities" },
+      { id: "b", text: "It usually cannot interact with dynamic on-screen content like a screen reader can" },
+      { id: "c", text: "They are prohibitively expensive" },
+      { id: "d", text: "They cannot convert text to speech" }
+    ],
+    answer: "b",
+    category: "Assistive Technology",
+    explanation: "Self-voicing interfaces mainly broadcast information and typically do not provide full interaction with dynamic content like screen readers do."
+  },
+  {
+    id: 162,
+    text: "Which form of color vision deficiency is the most prevalent?",
+    options: [
+      { id: "a", text: "Blue-yellow color-blindness (Tritanopia)" },
+      { id: "b", text: "Red-green color-blindness" },
+      { id: "c", text: "Total color blindness (Achromatopsia)" },
+      { id: "d", text: "Red-black confusion" }
+    ],
+    answer: "b",
+    category: "Disability Categories",
+    explanation: "Red-green color-blindness is the most common form, affecting the ability to distinguish reds, greens, and related hues."
+  },
+  {
+    id: 163,
+    text: "Why should designers avoid using color alone to convey essential information?",
+    options: [
+      { id: "a", text: "Color is not supported in some browsers" },
+      { id: "b", text: "Users may override or not perceive color vision distinctions" },
+      { id: "c", text: "It violates semantic HTML" },
+      { id: "d", text: "It only benefits keyboard users" }
+    ],
+    answer: "b",
+    category: "WCAG Guidelines",
+    explanation: "Users with color vision deficiencies or custom color settings may not perceive information conveyed strictly through color."
+  },
+  {
+    id: 164,
+    text: "What is a limitation of assistive technology for people with color-blindness?",
+    options: [
+      { id: "a", text: "Screen readers cannot interpret colors" },
+      { id: "b", text: "Few tools exist to correct or compensate color vision deficiencies" },
+      { id: "c", text: "Braille displays cannot render colors" },
+      { id: "d", text: "Refreshable braille only supports text" }
+    ],
+    answer: "b",
+    category: "Assistive Technology",
+    explanation: "There are very limited assistive technologies for color-blindness, so users must often rely on design accommodations rather than tech solutions."
+  },
+  {
+    id: 165,
+    text: "Which feedback method is most suitable for notifying a deafblind user of an alert?",
+    options: [
+      { id: "a", text: "Audio alert" },
+      { id: "b", text: "Visual flash" },
+      { id: "c", text: "Haptic (vibrational) feedback" },
+      { id: "d", text: "Pop-up message" }
+    ],
+    answer: "c",
+    category: "Assistive Technology",
+    explanation: "Haptic feedback (vibrations) can alert users who cannot see or hear visual/audio notifications."
+  },
+  {
+    id: 166,
+    text: "What communication method allows deafblind users to understand sign language?",
+    options: [
+      { id: "a", text: "Visual interpreter on screen" },
+      { id: "b", text: "Captioned video" },
+      { id: "c", text: "Tactile sign language interpretation" },
+      { id: "d", text: "Audio description" }
+    ],
+    answer: "c",
+    category: "Assistive Technology",
+    explanation: "Tactile sign language conveys signs via touch between the interpreter’s and user’s hands, suitable for those who are deafblind."
+  },
+  {
+    id: 167,
+    text: "Which device is used to produce hard-copy braille from digital text?",
+    options: [
+      { id: "a", text: "Refreshable braille display" },
+      { id: "b", text: "Braille embosser" },
+      { id: "c", text: "Screen magnifier" },
+      { id: "d", text: "OCR scanner" }
+    ],
+    answer: "b",
+    category: "Assistive Technology",
+    explanation: "Braille embossers print raised braille characters on paper, translating digital text into a tactile hard copy."
   }
+
+
 ];

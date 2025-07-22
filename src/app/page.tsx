@@ -42,10 +42,18 @@ const AccessibilityQuiz: React.FC = () => {
     setAnswerChecked(false);
   }, [selectedCategory, questions]);
 
-  const handleAnswerSelect = (optionId: string) => {
-    if (answerChecked) return; // Prevent changing answer after check
-    setSelectedAnswer(optionId);
-  };
+const handleAnswerSelect = (optionId: string) => {
+  if (answerChecked) return;
+
+  setSelectedAnswer(optionId);
+  setAnswerChecked(true);
+  setShowExplanation(true);
+
+  if (optionId === shuffledQuestions[currentQuestion].answer) {
+    setScore(prev => prev + 1);
+  }
+};
+
 
   const handleCheckAnswer = () => {
     setAnswerChecked(true);
@@ -370,16 +378,17 @@ const AccessibilityQuiz: React.FC = () => {
         )}
         
         <nav className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
-          {selectedAnswer && !answerChecked ? (
-            <button
-              onClick={handleCheckAnswer}
-              className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Check Answer
-            </button>
-          ) : (
-            <div></div>
-          )}
+      {selectedAnswer && !answerChecked ? (
+  <button
+    onClick={handleCheckAnswer}
+    className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+  >
+    Check Answer
+  </button>
+) : (
+  <div></div>
+)}
+
 
           {answerChecked && (
             <button
