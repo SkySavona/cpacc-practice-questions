@@ -34,7 +34,7 @@ const AccessibilityQuiz: React.FC = () => {
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [checked, setChecked] = useState(false);
-  const [showExplanation, setShowExplanation] = useState(false);
+  const [, setShowExplanation] = useState(false);
   const [results, setResults] = useState<ResultItem[]>([]);
   const [quizFinished, setQuizFinished] = useState(false);
 
@@ -47,6 +47,19 @@ const AccessibilityQuiz: React.FC = () => {
   const answeredCount = results.filter((r) => r.selected !== null).length;
   const correctCount = results.filter((r) => r.correct).length;
   const wrongCount = answeredCount - correctCount;
+
+  // ---------- Persisted "wrong only" availability (SSR-safe) ----------
+  const [hasSavedWrong, setHasSavedWrong] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const raw = localStorage.getItem(LS_LAST_WRONG);
+      const arr = raw ? JSON.parse(raw) : [];
+      setHasSavedWrong(Array.isArray(arr) && arr.length > 0);
+    } catch {
+      setHasSavedWrong(false);
+    }
+  }, [quizStarted, quizFinished]);
 
   // ---------- Start new run ----------
   const startQuiz = () => {
@@ -79,8 +92,14 @@ const AccessibilityQuiz: React.FC = () => {
       .filter((r) => r.selected !== null && !r.correct)
       .map((r) => r.id);
     const wrongQs = questions.filter((q) => wrongIds.includes(q.id));
-    localStorage.setItem(LS_LAST_WRONG, JSON.stringify(wrongQs));
-    localStorage.setItem(LS_LAST_RESULTS, JSON.stringify(results));
+
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(LS_LAST_WRONG, JSON.stringify(wrongQs));
+        localStorage.setItem(LS_LAST_RESULTS, JSON.stringify(results));
+      } catch {}
+    }
+
     setShowExitModal(false);
   };
 
@@ -117,8 +136,13 @@ const AccessibilityQuiz: React.FC = () => {
         .filter((r) => r.selected !== null && !r.correct)
         .map((r) => r.id);
       const wrongQs = questions.filter((q) => wrongIds.includes(q.id));
-      localStorage.setItem(LS_LAST_WRONG, JSON.stringify(wrongQs));
-      localStorage.setItem(LS_LAST_RESULTS, JSON.stringify(results));
+
+      if (typeof window !== "undefined") {
+        try {
+          localStorage.setItem(LS_LAST_WRONG, JSON.stringify(wrongQs));
+          localStorage.setItem(LS_LAST_RESULTS, JSON.stringify(results));
+        } catch {}
+      }
     }
   };
 
@@ -127,20 +151,25 @@ const AccessibilityQuiz: React.FC = () => {
   };
 
   const retryWrongOnly = () => {
-    const raw = localStorage.getItem(LS_LAST_WRONG);
-    const wrongQs: Question[] = raw ? JSON.parse(raw) : [];
-    if (!wrongQs.length) return;
+    if (typeof window === "undefined") return;
+    try {
+      const raw = localStorage.getItem(LS_LAST_WRONG);
+      const wrongQs: Question[] = raw ? JSON.parse(raw) : [];
+      if (!wrongQs.length) return;
 
-    const shuffled = [...wrongQs].sort(() => Math.random() - 0.5);
-    setQuestions(shuffled);
-    setResults(shuffled.map((q) => ({ id: q.id, selected: null, correct: false })));
-    setIdx(0);
-    setSelected(null);
-    setChecked(false);
-    setShowExplanation(false);
-    setQuizFinished(false);
-    setReviewMode(false);
-    setQuizStarted(true);
+      const shuffled = [...wrongQs].sort(() => Math.random() - 0.5);
+      setQuestions(shuffled);
+      setResults(shuffled.map((q) => ({ id: q.id, selected: null, correct: false })));
+      setIdx(0);
+      setSelected(null);
+      setChecked(false);
+      setShowExplanation(false);
+      setQuizFinished(false);
+      setReviewMode(false);
+      setQuizStarted(true);
+    } catch {
+      // ignore parse/storage errors
+    }
   };
 
   // ---------- Modal focus mgmt ----------
@@ -225,10 +254,6 @@ const AccessibilityQuiz: React.FC = () => {
 
   // ---------- Start screen ----------
   if (!quizStarted && !quizFinished && !reviewMode) {
-    const hasSavedWrong =
-      !!localStorage.getItem(LS_LAST_WRONG) &&
-      JSON.parse(localStorage.getItem(LS_LAST_WRONG) || "[]").length > 0;
-
     return (
       <main className="flex flex-col gap-6 items-center max-w-4xl mx-auto p-6 pt-10 mt-36 bg-gray-900 rounded-lg shadow-lg text-white">
         <h1 className="text-3xl font-bold text-indigo-400 text-center">CPACC Practice Questions</h1>
