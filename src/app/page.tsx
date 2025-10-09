@@ -439,7 +439,7 @@ const AccessibilityQuiz: React.FC = () => {
 
   return (
     <>
-      <main className="relative flex flex-col max-w-4xl mx-auto p-4 mt-28 sm:p-6 pt-10 bg-gray-900 rounded-lg shadow-lg text-white">
+      <main className="relative flex flex-col max-w-4xl mx-auto p-4 mt-16 sm:p-6 pt-10 bg-gray-900 rounded-lg shadow-lg text-white">
         {/* Exit -> Review */}
         <button
           onClick={openExitModal}
