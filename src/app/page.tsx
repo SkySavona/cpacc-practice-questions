@@ -518,17 +518,17 @@ const AccessibilityQuiz: React.FC = () => {
           </section>
         )}
 
-        <nav className="flex flex-col sm:flex-row justify-between gap-2">
-          <div />
-          <div className="sm:ml-auto">
-            <button
-              onClick={handleNext}
-              className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              {idx < questions.length - 1 ? (checked ? "Next Question" : "Skip") : "Finish"}
-            </button>
-          </div>
-        </nav>
+   <nav className="flex flex-col sm:flex-row gap-2 sm:justify-between">
+  <div className="mx-auto sm:ml-auto">
+    <button
+      onClick={handleNext}
+      className="px-8 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    >
+      {idx < questions.length - 1 ? (checked ? "Next Question" : "Skip") : "Finish"}
+    </button>
+  </div>
+</nav>
+
 
         {/* Progress bar */}
         <footer className="mt-6">
