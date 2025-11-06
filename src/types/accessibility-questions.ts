@@ -6794,22 +6794,1305 @@ export const accessibilityQuestions: Question[] = [
   answer: "b",
   category: "Accessible Design Techniques",
   explanation: "Zoom and reflow allow flexible viewing for users with low vision."
+},
+{
+  id: 530,
+  text: "Which model of disability states that people become disabled when an environment or technology presents barriers?",
+  options: [
+    { id: "a", text: "Functional solutions model" },
+    { id: "b", text: "Economic model" },
+    { id: "c", text: "Social model" },
+    { id: "d", text: "Medical model" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Social Model of Disability argues that people are disabled by barriers in society, not by their impairments. Accessibility focuses on removing those barriers."
+},
+{
+  id: 531,
+  text: "Which model of disability considers disability as a health problem that affects individual people, rather than society?",
+  options: [
+    { id: "a", text: "Medical model" },
+    { id: "b", text: "Social model" },
+    { id: "c", text: "Functional solutions model" },
+    { id: "d", text: "Charity model" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Medical Model views disability as an individual issue caused by illness, deficit, or injury and focuses on 'fixing' the person rather than the environment."
+},
+{
+  id: 532,
+  text: "Which model of disability recognizes that people with disabilities have fundamental human rights and should be free from discrimination?",
+  options: [
+    { id: "a", text: "Social model" },
+    { id: "b", text: "Economic model" },
+    { id: "c", text: "Charity model" },
+    { id: "d", text: "Human rights model" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Human Rights Model emphasizes equality, dignity, and legal protections, framing accessibility as a legal and ethical responsibility."
+},
+{
+  id: 533,
+  text: "Someone can express their thoughts clearly when speaking, but struggles when writing. Which disability does this describe?",
+  options: [
+    { id: "a", text: "ADHD" },
+    { id: "b", text: "Dyscalculia" },
+    { id: "c", text: "Dysgraphia" },
+    { id: "d", text: "Dysnomia" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Dysgraphia affects writing ability and fine motor skills required to produce written language, even when spoken language skills are strong."
+},
+{
+  id: 534,
+  text: "A child is struggling to keep score of a football game and has difficulty counting and adding numbers. Which disability are they likely experiencing?",
+  options: [
+    { id: "a", text: "Dyslexia" },
+    { id: "b", text: "Dyscalculia" },
+    { id: "c", text: "Dyspraxia" },
+    { id: "d", text: "Dysnomia" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Dyscalculia affects numerical reasoning, math concepts, and performing calculations."
+},
+{
+  id: 535,
+  text: "A child with normal or above-average intelligence who struggles with reading most likely has which disability?",
+  options: [
+    { id: "a", text: "Dysphagia" },
+    { id: "b", text: "Dysgraphia" },
+    { id: "c", text: "Dysnomia" },
+    { id: "d", text: "Dyslexia" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Dyslexia affects reading accuracy, fluency, and decoding, despite strong cognitive ability."
+},
+{
+  id: 536,
+  text: "Flickering or flashing content can trigger serious reactions in people with which condition?",
+  options: [
+    { id: "a", text: "Cataracts" },
+    { id: "b", text: "Epilepsy" },
+    { id: "c", text: "Muscular sclerosis" },
+    { id: "d", text: "Macular degeneration" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Photosensitive epilepsy can be triggered by flashing or high-contrast moving content, which is why WCAG includes specific thresholds for flashing."
+},
+{
+  id: 537,
+  text: "A child is extremely sensitive to sound, smell, and light, and shows limited interest in others. These are characteristics of which disability?",
+  options: [
+    { id: "a", text: "Deafness" },
+    { id: "b", text: "Autism Spectrum Disorder" },
+    { id: "c", text: "Blindness" },
+    { id: "d", text: "Dyslexia" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Autism Spectrum Disorder may involve sensory sensitivity and differences in social interaction and engagement."
+},
+{
+  id: 538,
+  text: "A person whose sensory input is limited to touch, smell, and taste has which disability?",
+  options: [
+    { id: "a", text: "Hard of hearing" },
+    { id: "b", text: "Blindness" },
+    { id: "c", text: "Deafness" },
+    { id: "d", text: "Deaf-blindness" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Deaf-blindness limits both vision and hearing, leaving tactile communication as the primary sensory input channel."
+},
+{
+  id: 539,
+  text: "Which assistive technology uses vibrations or tactile sensations to support communication with technology?",
+  options: [
+    { id: "a", text: "Sign language" },
+    { id: "b", text: "White cane" },
+    { id: "c", text: "Screen reader" },
+    { id: "d", text: "Haptics" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Haptics uses vibration feedback to convey information through touch, supporting users who rely on tactile communication."
+},
+{
+  id: 540,
+  text: "Which workplace accommodation would most benefit a person with a mobility, flexibility, or body structure disability?",
+  options: [
+    { id: "a", text: "Ergonomic design of their workstation" },
+    { id: "b", text: "Brightly lit rooms and soothing colors" },
+    { id: "c", text: "Flashing lights and haptic indicators" },
+    { id: "d", text: "Prosthetics" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Ergonomic workstations (adjustable desks, chairs, input devices) directly reduce physical strain and accommodate limited mobility or flexibility."
+},
+{
+  id: 541,
+  text: "A webpage designer uses light blue text on a white background. This poor color contrast would most affect people with which disability?",
+  options: [
+    { id: "a", text: "Color vision deficiency" },
+    { id: "b", text: "Deaf-blindness" },
+    { id: "c", text: "Low vision" },
+    { id: "d", text: "Blindness" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Insufficient luminance contrast mainly harms users with low vision who rely on clear foreground/background separation. Color-blind users are impacted by color-only cues, not contrast per se."
+},
+{
+  id: 542,
+  text: "Using a microphone when presenting in a large room would most benefit people with which disability?",
+  options: [
+    { id: "a", text: "Hard of hearing" },
+    { id: "b", text: "Deaf" },
+    { id: "c", text: "Blindness" },
+    { id: "d", text: "Deaf-blindness" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Amplification improves audibility and clarity for people who are hard of hearing; it does not meaningfully assist those who are fully deaf."
+},
+{
+  id: 543,
+  text: "A person's first language is French Sign Language (LSF), and they have learned lipreading to communicate with hearing people. Which disability do they most likely have?",
+  options: [
+    { id: "a", text: "Deafness" },
+    { id: "b", text: "Dysfluency" },
+    { id: "c", text: "Blindness" },
+    { id: "d", text: "Dyslexia" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Primary sign language plus lipreading strongly indicates deafness or severe hearing loss."
+},
+{
+  id: 544,
+  text: "A bar graph that only uses color to show data creates the greatest barrier to people with which disability?",
+  options: [
+    { id: "a", text: "Deaf-blindness" },
+    { id: "b", text: "Blindness" },
+    { id: "c", text: "Low vision" },
+    { id: "d", text: "Color vision deficiency" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Relying on color alone blocks users with color vision deficiency. Distinct patterns, labels, or textures are needed to disambiguate data."
+},
+{
+  id: 545,
+  text: "An example of a reasonable accommodation for a student with anxiety when they take a test is:",
+  options: [
+    { id: "a", text: "More time provided to complete a test" },
+    { id: "b", text: "The chance to retake the test if the student fails" },
+    { id: "c", text: "Answers to some of the questions" },
+    { id: "d", text: "Fundamentally altering the nature of the test" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Extended time is a common, reasonable adjustment. Providing answers or changing the test’s nature would be unfair or inappropriate."
+},
+{
+  id: 546,
+  text: "Which disability is characterized by the inability to grip objects and use fine motor skills?",
+  options: [
+    { id: "a", text: "Seizure" },
+    { id: "b", text: "Speech" },
+    { id: "c", text: "Mobility" },
+    { id: "d", text: "Psychological" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Fine-motor limitations are part of mobility/physical disabilities impacting manipulation and dexterity."
+},
+{
+  id: 547,
+  text: "Cerebral palsy can create multiple disabilities such as visual, learning, hearing, speech, epilepsy, and intellectual disabilities. It is a:",
+  options: [
+    { id: "a", text: "Speech disability" },
+    { id: "b", text: "Cognitive disability" },
+    { id: "c", text: "Body structure disability" },
+    { id: "d", text: "Neurological disability" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Cerebral palsy results from neurological impairment affecting motor control and potentially other functions."
+},
+{
+  id: 548,
+  text: "A person with OCD has a trained dog that interrupts skin-picking by bringing a brush to cue a safer behavior. Which type of animal is this?",
+  options: [
+    { id: "a", text: "Service dog" },
+    { id: "b", text: "Well-trained pet" },
+    { id: "c", text: "Therapy dog" },
+    { id: "d", text: "Emotional support animal" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Service dogs are trained to perform specific tasks that mitigate a disability; task interruption and redirection qualifies."
+},
+{
+  id: 549,
+  text: "A person with which disability type would be best served by haptic alerts (such as buzzing) on their iPhone?",
+  options: [
+    { id: "a", text: "Visual" },
+    { id: "b", text: "Cognitive" },
+    { id: "c", text: "Auditory" },
+    { id: "d", text: "Neurological" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Haptics convert sound-based alerts to tactile signals, aiding users who are deaf or hard of hearing."
+},
+{
+  id: 550,
+  text: "A voice output communication aid with eye tracking is an example of which type of assistive technology?",
+  options: [
+    { id: "a", text: "Audio description" },
+    { id: "b", text: "Voice recognition" },
+    { id: "c", text: "Augmentative and Alternative Communication (AAC)" },
+    { id: "d", text: "Screen reader technology" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "AAC devices support communication when speech is limited. Eye-tracking AAC allows users to form messages and generate synthesized speech."
+},
+{
+  id: 551,
+  text: "This assistive technology is for users whose vision loss prevents them from seeing the screen. It provides speech and braille output.",
+  options: [
+    { id: "a", text: "JAWS" },
+    { id: "b", text: "Dragon" },
+    { id: "c", text: "Sip-and-puff" },
+    { id: "d", text: "VOCA" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "JAWS is a full-featured screen reader, providing speech and refreshable braille output for users who cannot see the screen."
+},
+{
+  id: 552,
+  text: "In an online course, the instructor describes all visual information on slides. This avoids the need for which assistive strategy?",
+  options: [
+    { id: "a", text: "Sign language interpretation" },
+    { id: "b", text: "Audio descriptions" },
+    { id: "c", text: "Closed captions" },
+    { id: "d", text: "Subtitles" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Audio descriptions narrate visual content for blind and low-vision users. If the instructor already describes the visuals, separate audio description is not necessary."
+},
+{
+  id: 553,
+  text: "A person with low vision needs to follow the cursor and enlarge content on the screen. Which assistive technology is used?",
+  options: [
+    { id: "a", text: "Screen magnifier" },
+    { id: "b", text: "Screen enhancer" },
+    { id: "c", text: "Screen multiplier" },
+    { id: "d", text: "Screen speaker" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Screen magnifiers allow enlargement and tracking of content, enabling low-vision users to view and navigate interfaces."
+},
+{
+  id: 554,
+  text: "For interpersonal communication, a person with deaf-blindness uses tactile sign language. Which method would they also most likely use?",
+  options: [
+    { id: "a", text: "Closed captioning" },
+    { id: "b", text: "Refreshable braille display" },
+    { id: "c", text: "Voice recognition" },
+    { id: "d", text: "Input / output switches" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Refreshable braille displays support tactile reading and are a key communication tool for people who are both deaf and blind."
+},
+{
+  id: 555,
+  text: "People with which type of disability benefit most from listening to text being read aloud by text-to-speech software?",
+  options: [
+    { id: "a", text: "Cognitive disabilities" },
+    { id: "b", text: "Psychological disabilities" },
+    { id: "c", text: "Mobility disabilities" },
+    { id: "d", text: "Auditory disabilities" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Text-to-speech helps users with dyslexia, ADHD, and other cognitive processing challenges by reducing reading load and improving comprehension."
+},
+{
+  id: 556,
+  text: "Which assistive technology describes speech and sounds on a video and appears at the bottom of the screen?",
+  options: [
+    { id: "a", text: "Audio descriptions" },
+    { id: "b", text: "Transcripts" },
+    { id: "c", text: "Screen reading" },
+    { id: "d", text: "Captions" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Captions provide text equivalents of spoken dialogue and audio cues, supporting viewers who are deaf or hard of hearing."
+},
+{
+  id: 557,
+  text: "Which assistive technology do most people who are hard of hearing use?",
+  options: [
+    { id: "a", text: "Lip reading" },
+    { id: "b", text: "Captions" },
+    { id: "c", text: "Hearing aids" },
+    { id: "d", text: "Sign language" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Most people with hearing loss use hearing aids as their primary assistive technology, often combined with other support strategies."
+},
+{
+  id: 558,
+  text: "Software that highlights text while reading it aloud would most benefit someone with which disability?",
+  options: [
+    { id: "a", text: "Dyslexia" },
+    { id: "b", text: "Color vision deficiency" },
+    { id: "c", text: "Motor impairment" },
+    { id: "d", text: "Deafness" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Word-by-word synchronized highlighting supports decoding and word recognition for users with dyslexia and other reading-based learning disabilities."
+},
+{
+  id: 559,
+  text: "A device that converts typed text into synthesized speech is an AAC technology that primarily benefits which disability type?",
+  options: [
+    { id: "a", text: "Hearing" },
+    { id: "b", text: "Psychological" },
+    { id: "c", text: "Vision" },
+    { id: "d", text: "Speech" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "AAC speech-generating devices support users who cannot speak or whose speech is limited, allowing effective verbal communication."
+},
+{
+  id: 560,
+  text: "Assistive technologies such as head-wands, mouth sticks, sip-and-puff switches, and eye trackers are designed for which type of disability?",
+  options: [
+    { id: "a", text: "Vision" },
+    { id: "b", text: "Mobility" },
+    { id: "c", text: "Cognitive" },
+    { id: "d", text: "Hearing" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "These devices are used when someone cannot use their hands due to mobility or motor impairments. They enable alternative input for interaction and control."
+},
+{
+  id: 561,
+  text: "Which assistive technology allows people who are blind or partially sighted to read the text on a computer screen?",
+  options: [
+    { id: "a", text: "Screen speaker" },
+    { id: "b", text: "Screen magnifier" },
+    { id: "c", text: "Audio captioning" },
+    { id: "d", text: "Screen reader" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Screen readers convert digital text to speech or braille, enabling blind and low-vision users to navigate and understand content."
+},
+{
+  id: 562,
+  text: "For which disability type is voice recognition software such as Dragon primarily intended?",
+  options: [
+    { id: "a", text: "Motor" },
+    { id: "b", text: "Psychological" },
+    { id: "c", text: "Sensory" },
+    { id: "d", text: "Cognitive" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Voice recognition provides hands-free computer control, supporting users who cannot use a keyboard or mouse due to mobility impairments."
+},
+{
+  id: 563,
+  text: "What do the first two goals of the United Nation's 2030 Agenda for Sustainable Development aim to end for people with disabilities?",
+  options: [
+    { id: "a", text: "Poverty and discrimination" },
+    { id: "b", text: "Poverty and hunger" },
+    { id: "c", text: "Isolation and exclusion" },
+    { id: "d", text: "Clean water and sanitation" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Goals 1 and 2 focus on ending poverty and hunger, recognizing that persons with disabilities are disproportionately affected."
+},
+{
+  id: 564,
+  text: "According to the WHO, cataracts are the leading cause of blindness globally. The second leading cause is:",
+  options: [
+    { id: "a", text: "Glaucoma" },
+    { id: "b", text: "Diabetic retinopathy" },
+    { id: "c", text: "Age-related macular degeneration" },
+    { id: "d", text: "Corneal opacities" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Glaucoma is the second leading cause of blindness worldwide due to damage to the optic nerve."
+},
+{
+  id: 565,
+  text: "As people age, which common economic problem do they face?",
+  options: [
+    { id: "a", text: "Higher rates of taxation" },
+    { id: "b", text: "Higher healthcare costs" },
+    { id: "c", text: "Lack of educational opportunities" },
+    { id: "d", text: "Underrepresentation in government" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Aging populations experience increased medical needs and costs, creating financial strain and inequity in healthcare access."
+},
+{
+  id: 566,
+  text: "What percentage of people in the world have some type of disability?",
+  options: [
+    { id: "a", text: "13%" },
+    { id: "b", text: "16%" },
+    { id: "c", text: "21%" },
+    { id: "d", text: "24%" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "The WHO estimates that approximately 16% of the world’s population lives with a disability, about 1 in 6 people."
+},
+{
+  id: 567,
+  text: "When speaking to a deaf person who is using a sign language interpreter, you should:",
+  options: [
+    { id: "a", text: "Speak to the translator" },
+    { id: "b", text: "Speak clearly so the deaf person can lipread" },
+    { id: "c", text: "Speak to the deaf person" },
+    { id: "d", text: "Speak loudly just in case they can hear you" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Always direct communication toward the person, not the interpreter. The interpreter is a communication facilitator, not the conversation partner."
+},
+{
+  id: 568,
+  text: "Someone is sitting in a wheelchair. Which is the most appropriate way of referring to them?",
+  options: [
+    { id: "a", text: "Someone who unfortunately is in a wheelchair" },
+    { id: "b", text: "Someone who is wheelchair bound" },
+    { id: "c", text: "A person in a wheelchair" },
+    { id: "d", text: "A person confined to a wheelchair" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Person-first, neutral language avoids negative framing. A wheelchair is empowering mobility, not a confinement."
+},
+{
+  id: 569,
+  text: "You see a person using crutches leaning on a door and adjusting their balance. What should you do?",
+  options: [
+    { id: "a", text: "Hold their crutches to stabilize them" },
+    { id: "b", text: "Ask the person if they would like help opening the door" },
+    { id: "c", text: "Open the door for them without asking" },
+    { id: "d", text: "Provide physical support under their arms" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Always ask before assisting. Autonomy and dignity matter; offering help is appropriate, assuming need is not."
+},
+{
+  id: 570,
+  text: "Which concept refers to providing practical measures in the workplace that create access for someone, and is required when barriers have not or cannot be removed?",
+  options: [
+    { id: "a", text: "Accessibility conformance" },
+    { id: "b", text: "Inclusive design" },
+    { id: "c", text: "Individual accommodation" },
+    { id: "d", text: "Universal design" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Accommodation is provided when inclusive or universal design cannot remove all barriers. It addresses specific, individual needs."
+},
+{
+  id: 571,
+  text: "What might be a reasonable accommodation for someone taking a test?",
+  options: [
+    { id: "a", text: "Allow unrestricted Internet access during the test" },
+    { id: "b", text: "Provide copies of the questions prior to the test" },
+    { id: "c", text: "Tape record responses for later transcription by another person" },
+    { id: "d", text: "Allow a scribe to clue-in on correct responses" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Recording responses for transcription supports those with writing or motor difficulties without altering the content or fairness of the test."
+},
+{
+  id: 572,
+  text: "The main difference between accommodation and inclusive design is:",
+  options: [
+    { id: "a", text: "Inclusive design requires a request and needs assessment" },
+    { id: "b", text: "Accommodation requires a request and needs assessment" },
+    { id: "c", text: "Accommodation is required by law in all cases" },
+    { id: "d", text: "Inclusive design is required by law in all cases" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Inclusive design aims to reduce or remove barriers universally. Accommodation is applied individually and requires a request and assessment."
+},
+{
+  id: 573,
+  text: "Which personal benefit is supported by increased opportunities for employment?",
+  options: [
+    { id: "a", text: "Greater family income and wealth potential" },
+    { id: "b", text: "Increased innovation" },
+    { id: "c", text: "Improved corporate social responsibility" },
+    { id: "d", text: "Minimized legal risk" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Employment increases economic independence and contributes to improved financial stability for individuals and families."
+},
+{
+  id: 574,
+  text: "Which example meets the universal design principle of low physical effort?",
+  options: [
+    { id: "a", text: "Door knobs that turn" },
+    { id: "b", text: "Child-proof pill bottles" },
+    { id: "c", text: "Automatic soap dispensers" },
+    { id: "d", text: "Ambidextrous scissors" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Automatic dispensers require little or no physical effort, making them accessible to more users, including those with limited strength or mobility."
+},
+{
+  id: 575,
+  text: "When profit-driven businesses create accessibility policies and programs to protect their assets and reputations, which type of risk are they trying to minimize?",
+  options: [
+    { id: "a", text: "Disability risk" },
+    { id: "b", text: "Innovation risk" },
+    { id: "c", text: "Accommodation risk" },
+    { id: "d", text: "Legal risk" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Failing to provide accessibility exposes companies to lawsuits, compliance violations, and brand damage. Legal and reputational risk drives policy adoption."
+},
+{
+  id: 576,
+  text: "For a society, increasing the participation of people with disabilities in the workforce leads to an increase in the number of taxpayers and reduction of support costs. Which benefit is this?",
+  options: [
+    { id: "a", text: "Personal" },
+    { id: "b", text: "Accessibility" },
+    { id: "c", text: "Independence" },
+    { id: "d", text: "Economic" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Workforce participation reduces reliance on social supports and increases tax revenue, producing direct economic benefit."
+},
+{
+  id: 577,
+  text: "Accessible websites and services demonstrate corporate social responsibility. Which key business benefit does CSR support?",
+  options: [
+    { id: "a", text: "Innovation" },
+    { id: "b", text: "Legal risk" },
+    { id: "c", text: "Market reach" },
+    { id: "d", text: "Brand enhancement" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "CSR strengthens brand reputation and trust, showing that the organization values equity and inclusion."
+},
+{
+  id: 578,
+  text: "Captions make videos:",
+  options: [
+    { id: "a", text: "Perceivable" },
+    { id: "b", text: "Operable" },
+    { id: "c", text: "Understandable" },
+    { id: "d", text: "Robust" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Captions provide a non-auditory equivalent to spoken audio, addressing the WCAG principle of Perceivable (Info must be available to all senses)."
+},
+{
+  id: 579,
+  text: "Which is an example of a person without a disability who benefits from web accessibility?",
+  options: [
+    { id: "a", text: "Someone with ADHD who would be distracted by a cluttered design" },
+    { id: "b", text: "Someone using their phone in bright sunlight" },
+    { id: "c", text: "Someone who is hard of hearing using captions in a library" },
+    { id: "d", text: "Someone who is low vision and uses a screen reader" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Bright conditions reduce screen visibility. High-contrast and adaptable color design improves usability for everyone, including people without disabilities."
+},
+{
+  id: 580,
+  text: "By asking teachers to provide multiple ways of presenting information and learning activities, and how students demonstrate their knowledge, what does Universal Design for Learning emphasize?",
+  options: [
+    { id: "a", text: "Flexibility" },
+    { id: "b", text: "Rigidity" },
+    { id: "c", text: "Accessibility" },
+    { id: "d", text: "Information" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "UDL is based on flexibility, recognizing that learners vary in how they engage, process, and demonstrate understanding."
+},
+{
+  id: 581,
+  text: "There is a great degree of individual variation in how learners are motivated. Which UDL principle is concerned with motivating learners?",
+  options: [
+    { id: "a", text: "Provide multiple means of engagement" },
+    { id: "b", text: "Provide multiple means of representation" },
+    { id: "c", text: "Provide multiple means of action and expression" },
+    { id: "d", text: "Provide multiple means of comprehension" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Engagement focuses on motivation, interest, persistence, and emotional connection in the learning experience."
+},
+{
+  id: 582,
+  text: "Which UDL principle taps into the 'how' of learning?",
+  options: [
+    { id: "a", text: "Provide multiple means of engagement" },
+    { id: "b", text: "Provide multiple means of perception" },
+    { id: "c", text: "Provide multiple means of representation" },
+    { id: "d", text: "Provide multiple means of action and expression" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Action and expression address how learners demonstrate what they know, offering alternatives to writing, speaking, etc."
+},
+{
+  id: 583,
+  text: "Which WCAG success criteria level is the most commonly used standard?",
+  options: [
+    { id: "a", text: "A" },
+    { id: "b", text: "AA" },
+    { id: "c", text: "A+" },
+    { id: "d", text: "AAA" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "WCAG 2.x Level AA is the standard commonly required by policy and legislation across many regions and industries."
+},
+{
+  id: 584,
+  text: "Information and user interface components must be presented to users in ways they can perceive. Which example best supports this?",
+  options: [
+    { id: "a", text: "Provide text alternatives for any non-text content" },
+    { id: "b", text: "Make all functionality available from a keyboard" },
+    { id: "c", text: "Help users navigate and find content" },
+    { id: "d", text: "Make content appear and operate predictably" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Providing text alternatives ensures that non-text content can be accessed through assistive technologies such as screen readers."
+},
+{
+  id: 585,
+  text: "Which WCAG principle is concerned with ensuring someone can understand the information and the interface?",
+  options: [
+    { id: "a", text: "Perceivable" },
+    { id: "b", text: "Operable" },
+    { id: "c", text: "Understandable" },
+    { id: "d", text: "Robust" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Understandable focuses on language clarity, predictable interactions, and input assistance."
+},
+{
+  id: 586,
+  text: "A person who cannot use a mouse must be able to access all interactive elements with the keyboard. Which WCAG principle addresses this?",
+  options: [
+    { id: "a", text: "Perceivable" },
+    { id: "b", text: "Operable" },
+    { id: "c", text: "Understandable" },
+    { id: "d", text: "Robust" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Operable requires users be able to interact with all functionality regardless of input method (e.g., keyboard-only navigation)."
+},
+{
+  id: 587,
+  text: "Which WCAG principle requires that content can be rendered in both current and future technologies?",
+  options: [
+    { id: "a", text: "Perceivable" },
+    { id: "b", text: "Operable" },
+    { id: "c", text: "Understandable" },
+    { id: "d", text: "Robust" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Robust content can be interpreted by a wide range of assistive technologies and remain usable as technology evolves."
+},
+{
+  id: 588,
+  text: "WCAG is a set of standards for:",
+  options: [
+    { id: "a", text: "Web content accessibility guidelines" },
+    { id: "b", text: "Enforcing accessibility laws" },
+    { id: "c", text: "Making web content accessible" },
+    { id: "d", text: "Making Internet infrastructure robust" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "WCAG provides guidelines for making web content perceivable, operable, understandable, and robust for users with disabilities."
+},
+{
+  id: 589,
+  text: "The principles of Universal Design for Learning focus on providing multiple means of:",
+  options: [
+    { id: "a", text: "Engagement, perception, and executive functions" },
+    { id: "b", text: "Engagement, representation, and action and expression" },
+    { id: "c", text: "Recruiting interest, representation, and action and expression" },
+    { id: "d", text: "Recruiting interest, perception, and expression and communication" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "UDL’s core framework focuses on: Engagement (why), Representation (what), and Action & Expression (how)."
+},
+{
+  id: 590,
+  text: "The goal of universal design for the built environment is to ensure the accessibility of multiple environments. Which is an example of such an environment?",
+  options: [
+    { id: "a", text: "Web sites" },
+    { id: "b", text: "Transportation systems" },
+    { id: "c", text: "Captions" },
+    { id: "d", text: "Compatible environments" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Universal design for *built environments* focuses on physical spaces such as transportation, buildings, parks, and sidewalks—not digital content."
+},
+{
+  id: 591,
+  text: "What is the first phase of the user-centered design process?",
+  options: [
+    { id: "a", text: "Evaluate the solution" },
+    { id: "b", text: "Identify user and business requirements" },
+    { id: "c", text: "Design a solution" },
+    { id: "d", text: "Understand the users and their context" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "UCD begins by researching who the users are and the context in which they will use the product, before gathering requirements and designing."
+},
+{
+  id: 592,
+  text: "Which is an effective way to integrate accessibility into design?",
+  options: [
+    { id: "a", text: "Test only once, after content is complete" },
+    { id: "b", text: "Incorporate real (not theoretical) people in the funding" },
+    { id: "c", text: "Have users with disabilities evaluate accessibility" },
+    { id: "d", text: "Limit the scope to visual disabilities" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Direct involvement of users with disabilities improves accuracy and usability across diverse access needs."
+},
+{
+  id: 593,
+  text: "A user gives up buying tickets online because the interface is confusing. What is the key focus of usability?",
+  options: [
+    { id: "a", text: "Ease of use" },
+    { id: "b", text: "Meeting standards" },
+    { id: "c", text: "Flexibility" },
+    { id: "d", text: "Ease of design" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Usability focuses on how easy and efficient a system is to use, not just whether it meets technical criteria."
+},
+{
+  id: 594,
+  text: "Increased opportunities for employment lead to which personal benefit of accessibility?",
+  options: [
+    { id: "a", text: "Greater innovation" },
+    { id: "b", text: "Increased customer loyalty" },
+    { id: "c", text: "Greater family income and wealth potential" },
+    { id: "d", text: "Increased market share" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Employment increases income, independence, and economic stability for individuals and families."
+},
+{
+  id: 595,
+  text: "A person with limited mobility uses a voice-activated device to control household lights. Which universal design principle is illustrated?",
+  options: [
+    { id: "a", text: "Size and approach for use" },
+    { id: "b", text: "Low physical effort" },
+    { id: "c", text: "Tolerance for error" },
+    { id: "d", text: "Perceptible information" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Low physical effort supports operation without fatigue, force, or fine motor control demands."
+},
+{
+  id: 596,
+  text: "A web team is asked to design a website that is easy to use. What is the best methodology?",
+  options: [
+    { id: "a", text: "Tech-centered design" },
+    { id: "b", text: "Framework design" },
+    { id: "c", text: "WCAG design" },
+    { id: "d", text: "User-centered design" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "User-centered design ensures features, interactions, and content are shaped by real user needs and behaviors."
+},
+{
+  id: 597,
+  text: "Including people with disabilities throughout product design ensures accessibility. What is the other best practice?",
+  options: [
+    { id: "a", text: "Market accessibility" },
+    { id: "b", text: "Follow standards" },
+    { id: "c", text: "Follow trends" },
+    { id: "d", text: "Stress test" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Following standards (e.g., WCAG, EN 301 549, ADA) ensures consistent, verifiable, and testable accessibility."
+},
+{
+  id: 598,
+  text: "Usability overlaps with accessibility when:",
+  options: [
+    { id: "a", text: "There are government requirements" },
+    { id: "b", text: "WCAG is used for software development" },
+    { id: "c", text: "Customers raise usability complaints" },
+    { id: "d", text: "The intended audience includes people with disabilities" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Any time people with disabilities are part of the user base, usability must include accessibility considerations."
+},
+{
+  id: 599,
+  text: "Curb cuts were designed for wheelchair users but also help stroller and cart users. Which universal design principle is represented?",
+  options: [
+    { id: "a", text: "Equitable use" },
+    { id: "b", text: "Simple and intuitive use" },
+    { id: "c", text: "Low physical effort" },
+    { id: "d", text: "Size and space for approach and use" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Equitable use means the design benefits all users, not just those it was originally intended to support."
+},{
+  id: 600,
+  text: "The set of principles for curriculum development that give students equal opportunities to learn is known as:",
+  options: [
+    { id: "a", text: "Universal Design" },
+    { id: "b", text: "Universal Design for Learning" },
+    { id: "c", text: "Section 508" },
+    { id: "d", text: "WCAG" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "UDL focuses on curriculum development and instructional approaches that support flexible learning for all students."
+},
+{
+  id: 601,
+  text: "Which UDL principle is concerned with the brain's affective network and the 'why' of learning?",
+  options: [
+    { id: "a", text: "Provide multiple means of representation" },
+    { id: "b", text: "Provide multiple means of action and expression" },
+    { id: "c", text: "Provide multiple means of engagement" },
+    { id: "d", text: "Provide multiple means of activity" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Engagement focuses on interest, motivation, and emotional factors that influence learning participation."
+},
+{
+  id: 602,
+  text: "Which UDL principle asks teachers to provide options that help learners perceive and make sense of the information being taught?",
+  options: [
+    { id: "a", text: "Provide multiple means of engagement" },
+    { id: "b", text: "Provide multiple means of representation" },
+    { id: "c", text: "Provide multiple means of perception" },
+    { id: "d", text: "Provide multiple means of action and expression" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Representation addresses how information is presented and ensures it can be perceived by learners with different needs."
+},
+{
+  id: 603,
+  text: "When a teacher provides options for students to show knowledge (e.g., write an essay or give a presentation), which UDL principle is being applied?",
+  options: [
+    { id: "a", text: "Provide multiple means of assessment" },
+    { id: "b", text: "Provide multiple means of engagement" },
+    { id: "c", text: "Provide multiple means of action and expression" },
+    { id: "d", text: "Provide multiple means of representation" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Action and expression allow learners to demonstrate knowledge in varied and accessible ways."
+},
+{
+  id: 604,
+  text: "Ambidextrous scissors follow which universal design principle?",
+  options: [
+    { id: "a", text: "Perceptible information" },
+    { id: "b", text: "Flexibility in use" },
+    { id: "c", text: "Tolerance for error" },
+    { id: "d", text: "Low physical effort" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Flexibility in use allows individuals with different preferences or abilities to use the same tool effectively."
+},
+{
+  id: 605,
+  text: "Accessibility requirements for ICT benefit a wide range of users including:",
+  options: [
+    { id: "a", text: "Established and frequent users" },
+    { id: "b", text: "People with low literacy or not fluent in the language" },
+    { id: "c", text: "Desktop users" },
+    { id: "d", text: "People with high bandwidth connections" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Clear content structure, readable text, and flexible presentation benefit users with different language and literacy backgrounds."
+},
+{
+  id: 606,
+  text: "Which accessibility practice most enhances usability by lowering cognitive load?",
+  options: [
+    { id: "a", text: "Using ambient video" },
+    { id: "b", text: "Using clear language" },
+    { id: "c", text: "Using bypass blocks" },
+    { id: "d", text: "Using low color contrast" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Clear language reduces cognitive load and improves comprehension for all users, including those with cognitive disabilities."
+},
+{
+  id: 607,
+  text: "Which design discipline is concerned with a person's entire journey with a product, environment, or service?",
+  options: [
+    { id: "a", text: "Accessibility" },
+    { id: "b", text: "Universal design" },
+    { id: "c", text: "User experience" },
+    { id: "d", text: "Inclusive design" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "User experience (UX) considers all interactions and emotional responses across the entire user journey."
+},
+{
+  id: 608,
+  text: "A main difference between UDL and WCAG is:",
+  options: [
+    { id: "a", text: "UDL is a set of standards required by law" },
+    { id: "b", text: "UDL can be tested, and accessibility is subjective" },
+    { id: "c", text: "There is no difference between them" },
+    { id: "d", text: "WCAG is a set of standards for making web content accessible" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "WCAG provides testable criteria for digital accessibility. UDL is an instructional framework for learning environments."
+},
+{
+  id: 609,
+  text: "A person who is blind navigates their computer using only the keyboard. Making all functionality available from a keyboard aligns with which WCAG principle?",
+  options: [
+    { id: "a", text: "Perceivable" },
+    { id: "b", text: "Operable" },
+    { id: "c", text: "Understandable" },
+    { id: "d", text: "Robust" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Operable ensures that interface components can be used through various input methods such as keyboards."
+},
+{
+  id: 610,
+  text: "Which was the first international agreement to declare that people have fundamental human rights that must be universally protected?",
+  options: [
+    { id: "a", text: "The Convention on the Rights of Persons with Disabilities" },
+    { id: "b", text: "The Marrakesh Treaty" },
+    { id: "c", text: "The Universal Declaration of Human Rights" },
+    { id: "d", text: "Section 504" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Universal Declaration of Human Rights (1948) established foundational human rights for all people. While it does not mention disability specifically, it applies universally."
+},
+{
+  id: 611,
+  text: "Which is the first binding international human rights instrument that specifically protects the rights of people with disabilities?",
+  options: [
+    { id: "a", text: "The Universal Declaration of Human Rights" },
+    { id: "b", text: "The Convention on the Rights of Persons with Disabilities" },
+    { id: "c", text: "The Marrakesh Treaty" },
+    { id: "d", text: "The International Conventions Treaty" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "The CRPD is the first legally binding international human rights treaty explicitly focused on disability rights."
+},
+{
+  id: 612,
+  text: "Which treaty requires access to published works for persons who are blind, visually impaired, or otherwise print disabled?",
+  options: [
+    { id: "a", text: "The Marrakesh Treaty" },
+    { id: "b", text: "The Convention on the Rights of Persons with Disabilities" },
+    { id: "c", text: "The International Covenant on Civil and Political Rights" },
+    { id: "d", text: "The Universal Declaration of Human Rights" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Marrakesh Treaty (2013) ensures access to copyrighted works in accessible formats for people with print disabilities."
+},
+{
+  id: 613,
+  text: "Which agreement represents the shift from seeing people with disabilities as needing charity to recognizing them as people with rights?",
+  options: [
+    { id: "a", text: "The Convention on the Rights of Persons with Disabilities" },
+    { id: "b", text: "The International Covenant on Civil and Political Rights" },
+    { id: "c", text: "The Marrakesh Treaty" },
+    { id: "d", text: "The Universal Declaration of Human Rights" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "The CRPD reframes disability rights as civil rights and emphasizes autonomy, agency, and full participation."
+},
+{
+  id: 614,
+  text: "Which legal instrument sets out the full range of civil, political, economic, and social rights of everyone living in the EU?",
+  options: [
+    { id: "a", text: "Charter of Non Discrimination" },
+    { id: "b", text: "Convention on the Rights of EU Citizens" },
+    { id: "c", text: "Charter of Fundamental Rights" },
+    { id: "d", text: "Convention on Equality" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Charter of Fundamental Rights includes protections for independence, inclusion, and participation for persons with disabilities (Article 26)."
+},
+{
+  id: 615,
+  text: "Which U.S. national civil rights law guarantees equal opportunity for people with disabilities?",
+  options: [
+    { id: "a", text: "The Anti Discrimination Act" },
+    { id: "b", text: "The American Convention on Disability Act" },
+    { id: "c", text: "The Public Accommodations Act" },
+    { id: "d", text: "The Americans with Disabilities Act" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "The ADA (1990) provides federal civil rights protections and prohibits disability discrimination in employment, public life, and services."
+},
+{
+  id: 616,
+  text: "Which Canadian law applies to government and federally regulated entities and aims to make the country barrier-free by 2040?",
+  options: [
+    { id: "a", text: "The Accessible Canada Act" },
+    { id: "b", text: "The Accessibility for Provincial Citizens with Disabilities Act" },
+    { id: "c", text: "The Canadians with Disabilities Act" },
+    { id: "d", text: "The Quebec Disability Act" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Accessible Canada Act (2019) requires accessibility planning, reporting, and barrier removal with a national 2040 accessibility goal."
+},
+{
+  id: 617,
+  text: "Which UK law strengthens anti-discrimination protections in the workplace and society?",
+  options: [
+    { id: "a", text: "Charter on Disability Rights" },
+    { id: "b", text: "AODA" },
+    { id: "c", text: "UK Human Rights Code" },
+    { id: "d", text: "Equality Act 2010" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "The Equality Act 2010 consolidates and strengthens disability nondiscrimination protections, including accessibility and employment rights."
+},
+{
+  id: 618,
+  text: "Which U.S. law requires that communications and video programming be accessible?",
+  options: [
+    { id: "a", text: "Equality Act of 2010" },
+    { id: "b", text: "Rehabilitation Act of 1973" },
+    { id: "c", text: "21st Century Communications and Video Accessibility Act" },
+    { id: "d", text: "Air Carrier Access Act" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "The CVAA (2010) requires accessible telecommunications and media, including captions and accessible devices."
+},
+{
+  id: 619,
+  text: "Per Section 504 of the Rehabilitation Act, providing a distraction-free test room and extra test time is an example of which type of accommodation?",
+  options: [
+    { id: "a", text: "Reasonable accommodation" },
+    { id: "b", text: "Required accommodation" },
+    { id: "c", text: "Reasonable adjustment" },
+    { id: "d", text: "Accessibility accommodation" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Reasonable accommodations remove barriers to equal access in education without altering the essential nature of the activity or test."
+},{
+  id: 620,
+  text: "Which EU law prohibits disability discrimination in employment and occupation?",
+  options: [
+    { id: "a", text: "Workplace Equality Act" },
+    { id: "b", text: "Equal Opportunity Directive" },
+    { id: "c", text: "Disability Equality Act" },
+    { id: "d", text: "Employment Equality Directive" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "The EU Employment Equality Directive requires equal treatment in employment and occupation, including protection from disability discrimination."
+},
+{
+  id: 621,
+  text: "Which EU law establishes the accessibility standard rules that all public sector ICT must follow?",
+  options: [
+    { id: "a", text: "The EU ICT Directive 2016 / 2102" },
+    { id: "b", text: "The EU Web Accessibility Directive 2016 / 2102" },
+    { id: "c", text: "The European Accessibility Act 2016 / 2102" },
+    { id: "d", text: "The EU Disability Directive 2016 / 2102" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "The EU Web Accessibility Directive 2016/2102 ensures that all public sector websites and apps meet accessibility standards aligned with WCAG."
+},
+{
+  id: 622,
+  text: "Since the VPAT was designed for the U.S. federal government procurement process, why do private businesses use it?",
+  options: [
+    { id: "a", text: "Those private institutions may receive federal funding" },
+    { id: "b", text: "The VPAT provides an effective template for documenting ICT accessibility" },
+    { id: "c", text: "To meet the requirements of Section 504" },
+    { id: "d", text: "The federal government actively regulates ICT accessibility" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "The VPAT structure provides a widely accepted format to document accessibility compliance, so private organizations use it when evaluating or selling ICT products."
+},
+{
+  id: 623,
+  text: "Which tool is designed to help an organization assess its ICT accessibility progress?",
+  options: [
+    { id: "a", text: "VPAT" },
+    { id: "b", text: "ADA guidelines" },
+    { id: "c", text: "Maturity model" },
+    { id: "d", text: "Model assessment" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Maturity models provide structured methods for measuring and improving accessibility capabilities over time at the organizational level."
+},
+{
+  id: 624,
+  text: "Which is the best maturity model?",
+  options: [
+    { id: "a", text: "The W3C Web Accessibility Initiative Recommendations" },
+    { id: "b", text: "Business Disability Forum Accessibility Maturity Model" },
+    { id: "c", text: "The one that best meets an organization's sales commitments" },
+    { id: "d", text: "The one that best meets an organization's culture and needs" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Multiple maturity models exist; the most effective is the one aligned with the organization's culture, workflow, and accessibility goals."
+},
+{
+  id: 625,
+  text: "In which way does an organization's management help launch and sustain an accessibility program?",
+  options: [
+    { id: "a", text: "Builds a vision and aligns implementation with organizational strategies" },
+    { id: "b", text: "Investigates when authenticated experiences are not covered under the ADA" },
+    { id: "c", text: "Has the relationships in place to ensure success" },
+    { id: "d", text: "Is responsible for operational details" }
+  ],
+  answer: "a",
+  category: "IAAP Official Practice Exam",
+  explanation: "Leadership defines the strategic importance of accessibility and ensures it aligns with organizational goals and priorities."
+},
+{
+  id: 626,
+  text: "When planning a successful ICT accessibility program, efforts must be well grounded in:",
+  options: [
+    { id: "a", text: "Adapting to new technologies" },
+    { id: "b", text: "Integrating goals into policies" },
+    { id: "c", text: "Risk management" },
+    { id: "d", text: "The organization's culture, process, and practices" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Sustainable accessibility requires embedding accessibility practices directly into existing organizational culture and workflows."
+},
+{
+  id: 627,
+  text: "Which activity is critical to the design and development of accessible ICT?",
+  options: [
+    { id: "a", text: "Color palette design" },
+    { id: "b", text: "Repeatable processes" },
+    { id: "c", text: "Code libraries" },
+    { id: "d", text: "Testing" }
+  ],
+  answer: "d",
+  category: "IAAP Official Practice Exam",
+  explanation: "Accessibility must be tested early and throughout development to prevent barriers and reduce remediation cost and risk."
+},
+{
+  id: 628,
+  text: "What is an effective way to recruit people with disabilities to work in an organization?",
+  options: [
+    { id: "a", text: "Ensure they know standards such as WCAG" },
+    { id: "b", text: "Design using CSS, HTML, and JavaScript" },
+    { id: "c", text: "Post job openings on disability-focused job boards" },
+    { id: "d", text: "Create accessibility tests" }
+  ],
+  answer: "c",
+  category: "IAAP Official Practice Exam",
+  explanation: "Posting jobs on disability-focused networks demonstrates inclusion and increases access to qualified disabled candidates."
+},
+{
+  id: 629,
+  text: "As part of integrating ICT accessibility across an organization, which procurement best practice is essential?",
+  options: [
+    { id: "a", text: "Require vendors be WCAG certified" },
+    { id: "b", text: "Verify product accessibility claims" },
+    { id: "c", text: "Publish your IT design standards" },
+    { id: "d", text: "Ensure your vendor policies are accessible" }
+  ],
+  answer: "b",
+  category: "IAAP Official Practice Exam",
+  explanation: "Verifying claims ensures that vendors deliver products that truly meet accessibility requirements before purchase commitments are made."
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ];
